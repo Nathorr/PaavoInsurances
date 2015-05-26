@@ -8,6 +8,7 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button Content="Send insurance information" FontSize="30" HorizontalAlignment="Left" Margin="431,379,0,0" VerticalAlignment="Top" Height="217" Width="416" Click="Button_Click"/>
 
     </Grid>
 </Page>

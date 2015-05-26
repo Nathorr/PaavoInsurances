@@ -58,11 +58,7 @@ namespace PaavoInsurances
             [DataMember(Name = "billingPeriod")]
             public string billingPeriod;
         }
-        [DataContract]
-        public class HomeInsuranceClass
-        {
-
-        }
+     
 
         public ContactInfoPage()
         {

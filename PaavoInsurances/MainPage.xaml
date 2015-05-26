@@ -8,6 +8,7 @@
     mc:Ignorable="d">
 
     <Grid Background="#FF02AFFF">
-        <Button Content="Button" HorizontalAlignment="Left" Margin="449,400,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button Content="Price" HorizontalAlignment="Left" Margin="449,400,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button Content="Send data" HorizontalAlignment="Left" Margin="825,418,0,0" VerticalAlignment="Top" Height="171" Width="301" Click="Button_Click_1"/>
     </Grid>
 </Page>
