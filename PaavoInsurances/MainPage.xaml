@@ -7,5 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="#FF02AFFF"/>
+    <Grid Background="#FF02AFFF">
+        <Button Content="Button" HorizontalAlignment="Left" Margin="449,400,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+    </Grid>
 </Page>

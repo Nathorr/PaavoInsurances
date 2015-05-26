@@ -8,6 +8,17 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBox HorizontalAlignment="Left" Margin="175,215,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="65" Width="164"/>
+        <TextBox HorizontalAlignment="Left" Margin="175,285,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="65" Width="164"/>
+        <TextBox HorizontalAlignment="Left" Margin="175,355,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="65" Width="164"/>
+        <TextBox HorizontalAlignment="Left" Margin="175,565,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="65" Width="164"/>
+        <TextBox HorizontalAlignment="Left" Margin="175,495,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="65" Width="164"/>
+        <Button Content="Calculate price" HorizontalAlignment="Left" FontSize="45" Margin="432,290,0,0" VerticalAlignment="Top" Height="247" Width="410" Click="Button_Click"/>
+        <TextBox HorizontalAlignment="Left" Margin="175,145,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="65" Width="164"/>
+        <TextBox HorizontalAlignment="Left" Margin="175,75,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="65" Width="164"/>
+        <TextBlock Name="resultbox" HorizontalAlignment="Left" FontSize="70" Margin="986,323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="167" Width="231"/>
+        <TextBlock HorizontalAlignment="Left" Margin="1058,258,0,0" TextWrapping="Wrap" FontSize="30" Text="Price" VerticalAlignment="Top" Height="37" Width="95"/>
+        <ComboBox HorizontalAlignment="Left" Margin="175,425,0,0" VerticalAlignment="Top" Width="164" Height="65"/>
 
     </Grid>
 </Page>

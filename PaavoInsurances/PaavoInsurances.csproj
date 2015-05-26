@@ -111,6 +111,7 @@
     <Compile Include="BonusConfirmationPage.xaml.cs">
       <DependentUpon>BonusConfirmationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Price.cs" />
     <Compile Include="ConfirmationPage.xaml.cs">
       <DependentUpon>ConfirmationPage.xaml</DependentUpon>
     </Compile>
