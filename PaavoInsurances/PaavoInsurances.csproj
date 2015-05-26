@@ -134,6 +134,29 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\images\1month.png" />
+    <Content Include="Assets\images\1year.png" />
+    <Content Include="Assets\images\apartment.png" />
+    <Content Include="Assets\images\background.png" />
+    <Content Include="Assets\images\Barcode.png" />
+    <Content Include="Assets\images\callme.png" />
+    <Content Include="Assets\images\Euro.png" />
+    <Content Include="Assets\images\Health.png" />
+    <Content Include="Assets\images\house.png" />
+    <Content Include="Assets\images\infant.png" />
+    <Content Include="Assets\images\life.png" />
+    <Content Include="Assets\images\logobig.png" />
+    <Content Include="Assets\images\logosmall.png" />
+    <Content Include="Assets\images\offerme.png" />
+    <Content Include="Assets\images\pairhouse.png" />
+    <Content Include="Assets\images\pets.png" />
+    <Content Include="Assets\images\quarter.png" />
+    <Content Include="Assets\images\rowhouse.png" />
+    <Content Include="Assets\images\sauna.png" />
+    <Content Include="Assets\images\scanme.png" />
+    <Content Include="Assets\images\summerhouse.png" />
+    <Content Include="Assets\images\usd.png" />
+    <Content Include="Assets\images\vehicle.png" />
     <Content Include="Assets\Logo.scale-100.png" />
     <Content Include="Assets\SmallLogo.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
