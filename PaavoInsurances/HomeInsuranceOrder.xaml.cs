@@ -36,19 +36,13 @@ namespace PaavoInsurances
       
         
         [DataContract]
-
-        public class HuumoriLuokka
-        {
-            public HomeInsuranceClass homeInsurance = new HomeInsuranceClass();
-        }
         public class HomeInsuranceClass
         {
             public PricingParameters pricingParameters = new PricingParameters();
             public string name { get; set; }
             public string surName { get; set; }
             public string validTo { get; set; }
-     
-                
+            
         }
         public class PricingParameters
         {
@@ -72,12 +66,11 @@ namespace PaavoInsurances
         public HomeInsuranceClass homeInsurance = new HomeInsuranceClass();
         async private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
-            this.homeInsurance.name = "Tatu";
-            this.homeInsurance.surName = "Virtsa";
+            this.homeInsurance.name = "Paavo";
+            this.homeInsurance.surName = "Insurances";
             this.homeInsurance.validTo = "13.07.2015";
             this.homeInsurance.pricingParameters.postalCode = "00100";
-            this.homeInsurance.pricingParameters.address = "PILLiKatu 10";
+            this.homeInsurance.pricingParameters.address = "Nested objects parasta just nyt. :)";
             this.homeInsurance.pricingParameters.area = "79.5";
             this.homeInsurance.pricingParameters.buildYear = "1520";
             this.homeInsurance.pricingParameters.insuranceStartDate = "12.08.2016";
