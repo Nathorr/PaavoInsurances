@@ -138,6 +138,26 @@ namespace PaavoInsurances
             this.Frame.Navigate(typeof(CameraPage), cameraClass);
         }
 
+        private void ArrowBackButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(HomeInsuranceOffer));
+        }
 
+        private void ConfirmationYesButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Tähän Otson ja meidän tietokantaan tallennus
+        }
+
+        private void ConfirmationNoButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (ConfirmPopup.IsOpen == true)
+                ConfirmPopup.IsOpen = false;
+        }
+
+        private void ArrowForwardButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Tähän voi valmistella tallennusta tietokantoihin, esim. luokkiin sitomiset
+            ConfirmPopup.IsOpen = true;
+        }
     }
 }

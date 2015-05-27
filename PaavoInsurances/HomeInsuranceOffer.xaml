@@ -9,7 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     	<Image Margin="0,0,1,0" Source="Assets/images/background.png" Stretch="Fill"/>
-    	<Button Name="ArrowBackButton" HorizontalAlignment="Left" Height="109" Margin="80,72,0,0" VerticalAlignment="Top" Width="106" BorderThickness="0" Padding="0">
+    	<Button Name="ArrowBackButton" HorizontalAlignment="Left" Height="109" Margin="80,72,0,0" VerticalAlignment="Top" Width="106" BorderThickness="0" Padding="0" Click="ArrowBackButton_Click">
     		<Image Source="Assets/images/arrowback.png" Stretch="Fill" Height="93" Width="93"/>
     	</Button>
         <Button Name="ArrowForwardButton" HorizontalAlignment="Left" Margin="1189,631,0,0" VerticalAlignment="Top" Height="95" Width="95" BorderThickness="0" Padding="0" Click="ArrowForwardButton_Click">
@@ -64,7 +64,6 @@
     	<Button x:Name="OfferPriceMeButton" HorizontalAlignment="Left" Height="110" Margin="986,426,0,0" VerticalAlignment="Top" Width="110" BorderThickness="0" Padding="0" Click="OfferPriceMeButton_Click">
     		<Image Height="100" Source="Assets/images/priceme.png" Stretch="Fill" Width="100"/>
     	</Button>
-    	<TextBlock Name="OfferPriceResultTextBox" HorizontalAlignment="Left" FontSize="70" Margin="1098,402,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="167" Width="231"/>
-
+        <TextBlock Name="OfferPriceResultTextBox" HorizontalAlignment="Left" FontSize="70" Margin="1098,402,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="167" Width="231"/>
     </Grid>
 </Page>

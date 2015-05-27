@@ -10,10 +10,10 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Button Content="Send insurance information" FontSize="30" HorizontalAlignment="Left" Margin="407,1335,0,-784" VerticalAlignment="Top" Height="217" Width="416" Click="Button_Click"/>
         <Image Margin="0,0,1,0" Source="Assets/images/background.png" Stretch="Fill"/>
-        <Button x:Name="ArrowBackButton" HorizontalAlignment="Left" Height="109" Margin="80,72,0,0" VerticalAlignment="Top" Width="106" BorderThickness="0" Padding="0">
+        <Button x:Name="ArrowBackButton" HorizontalAlignment="Left" Height="109" Margin="80,72,0,0" VerticalAlignment="Top" Width="106" BorderThickness="0" Padding="0" Click="ArrowBackButton_Click">
         	<Image Source="Assets/images/arrowback.png" Stretch="Fill" Height="93" Width="93"/>
         </Button>
-        <Button x:Name="ArrowForwardButton" HorizontalAlignment="Left" Margin="1189,631,0,0" VerticalAlignment="Top" Height="95" Width="95" BorderThickness="0" Padding="0">
+        <Button x:Name="ArrowForwardButton" HorizontalAlignment="Left" Margin="1189,631,0,0" VerticalAlignment="Top" Height="95" Width="95" BorderThickness="0" Padding="0" Click="ArrowForwardButton_Click">
         	<Image Source="Assets/images/arrowforward.png" Stretch="Fill" Height="88" Width="88"/>
         </Button>
         <TextBox Name="OrderFirstNameTextBox" HorizontalAlignment="Left" Margin="272,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
@@ -31,6 +31,16 @@
         <Button Name="ScanMeButton" HorizontalAlignment="Left" Height="110" Margin="958,156,0,0" VerticalAlignment="Top" Width="110" BorderThickness="0" Padding="0" Click="ScanMeButton_Click">
         	<Image Height="100" Source="Assets/images/scanme.png" Stretch="Fill" Width="100"/>
         </Button>
-
+        <Popup Name="ConfirmPopup" Margin="334,106,353,160" IsOpen="False">
+            <Grid Background="#FF209CCC" Height="502" Width="679">
+                <TextBlock x:Name="ConfirmTextBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Confirm?" VerticalAlignment="Top" FontSize="96" FontFamily="Merriweather Sans" FontWeight="Bold" Margin="126,60,0,0"/>
+                <Button x:Name="ConfirmationYesButton" Click="ConfirmationYesButton_Click"  HorizontalAlignment="Left" Height="193" VerticalAlignment="Top" Width="193" BorderThickness="0" Padding="0" Margin="123,249,0,0">
+                    <Image Source="Assets/images/yes.png" Stretch="Fill" Height="187" Width="187"/>
+                </Button>
+                <Button x:Name="ConfirmationNoButton" Click="ConfirmationNoButton_Click"  HorizontalAlignment="Left" Height="193" VerticalAlignment="Top" Width="193" BorderThickness="0" Padding="0" Margin="381,249,0,0">
+                    <Image Source="Assets/images/no.png" Stretch="Fill" Height="185" Width="187"/>
+                </Button>
+            </Grid>
+        </Popup>
     </Grid>
 </Page>
