@@ -29,12 +29,25 @@ namespace PaavoInsurances
     /// </summary>
     public sealed partial class HomeInsuranceOrder : Page
     {
-        
+        public ScannedOldCustomerInfo.CameraClass cameraClass;
+
         public HomeInsuranceOrder()
         {
             this.InitializeComponent();
         }
-      
+        
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            
+            cameraClass = (ScannedOldCustomerInfo.CameraClass)e.Parameter;
+            //OrderFirstNameTextBox.Text = cameraClass.homeInsuranceClass.name;
+            //OrderLastNameTextBox.Text = cameraClass.homeInsuranceClass.surName;
+            OrderIDTextBox.Text = cameraClass.homeInsuranceClass.id;
+            if(cameraClass.homeInsuranceClass.bonusCard != null)
+                OrderBonusCardTextBox.Text = cameraClass.homeInsuranceClass.bonusCard;
+            OrderPriceTextBox.Text = cameraClass.homeInsuranceClass.pricingParameters.price.price;
+        }
+
         public class HomeInsuranceClass
         {
             public PricingParameters pricingParameters = new PricingParameters();
@@ -83,7 +96,7 @@ namespace PaavoInsurances
 
         async private void Button_Click(object sender, RoutedEventArgs e)
         {
-            homeInsurance.name = "asdasd";
+            /*homeInsurance.name = "asdasd";
             homeInsurance.surName = "asdasd";
             homeInsurance.validTo = "13.07.2015";
             homeInsurance.pricingParameters.postalCode = "00100";
@@ -96,7 +109,7 @@ namespace PaavoInsurances
             homeInsurance.pricingParameters.billingPeriod = "YEAR";
             homeInsurance.pricingParameters.price.price = "280";
             homeInsurance.pricingParameters.price.currency = "EUR";
-            homeInsurance.pricingParameters.price.billingPeriod = "YEAR";
+            homeInsurance.pricingParameters.price.billingPeriod = "YEAR";*/
             
             string sr_string = JsonConvert.SerializeObject(this.homeInsurance, Formatting.Indented);
             Debug.WriteLine("Post: " +sr_string);
@@ -117,6 +130,12 @@ namespace PaavoInsurances
                 InsertId(result, "asdasda");
             }
 
+        }
+
+        private void ScanMeButton_Click(object sender, RoutedEventArgs e)
+        {
+            cameraClass.previousPage = "homeInsuranceOrder";
+            this.Frame.Navigate(typeof(CameraPage), cameraClass);
         }
 
 

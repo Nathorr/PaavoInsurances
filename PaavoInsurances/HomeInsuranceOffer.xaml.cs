@@ -29,10 +29,43 @@ namespace PaavoInsurances
     /// </summary>
     public sealed partial class HomeInsuranceOffer : Page
     {
+        public Price price = new Price();
+        public ScannedOldCustomerInfo.CameraClass cameraClass = new ScannedOldCustomerInfo.CameraClass();
         public HomeInsuranceOffer()
         {
             this.InitializeComponent();
         }
+        
+        public class CameraClass
+        {
+            public HomeInsuranceClass homeInsuranceClass = new HomeInsuranceClass();
+            public string previousPage { get; set; }
+
+        }
+        public class HomeInsuranceClass
+        {
+            public PricingParameters pricingParameters = new PricingParameters();
+            public string id { get; set; }
+            public string name { get; set; }
+            public string surName { get; set; }
+            public string validTo { get; set; }
+            public string bonusCard { get; set; }
+
+        }
+        public class PricingParameters
+        {
+            public InsurancePrice price = new InsurancePrice();
+            public string postalCode { get; set; }
+            public string address { get; set; }
+            public string area { get; set; }
+            public string buildYear { get; set; }
+            public string insuranceStartDate { get; set; }
+            public string houseType { get; set; }
+            public string currency { get; set; }
+            public string billingPeriod { get; set; }
+
+        }
+
         public class ReturnedData
         {
             [DataMember(Name = "postalCode")]
@@ -67,16 +100,11 @@ namespace PaavoInsurances
         }
 
 
-        private void ArrowForwardButton_Click(object sender, RoutedEventArgs e)
+        public HomeInsuranceClass homeInsurance = new HomeInsuranceClass();
+
+        public async void CalculatePrice()
         {
-
-        }
-
-
-        private async void OfferPriceMeButton_Click(object sender, RoutedEventArgs e)
-        {
-
-            Price price = new Price();
+            
 
             if (HouseToggleButton.IsChecked == true)
             {
@@ -138,27 +166,27 @@ namespace PaavoInsurances
                 QuarterToggleButton.IsChecked = false;
                 YearToggleButton.IsChecked = false;
                 price.billingPeriod = "MONTH";
-                
+
             }
             if (QuarterToggleButton.IsChecked == true)
             {
                 MonthToggleButton.IsChecked = false;
                 YearToggleButton.IsChecked = false;
                 price.billingPeriod = "QUARTER";
-                
+
             }
             if (YearToggleButton.IsChecked == true)
             {
                 MonthToggleButton.IsChecked = false;
                 QuarterToggleButton.IsChecked = false;
                 price.billingPeriod = "YEAR";
-                
+
             }
             if (EuroToggleButton.IsChecked == true)
             {
                 DollarToggleButton.IsChecked = false;
                 price.currency = "EUR";
-              
+
             }
 
             if (DollarToggleButton.IsChecked == true)
@@ -194,11 +222,127 @@ namespace PaavoInsurances
                 Debug.WriteLine(result);
                 ReturnedData deSer = JsonConvert.DeserializeObject<ReturnedData>(result);
                 OfferPriceResultTextBox.Text = deSer.price.price.ToString();
+                cameraClass.homeInsuranceClass.pricingParameters.price.price = deSer.price.price.ToString();
+                
+                
             }
+        }
 
+        private async void OfferPriceMeButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            CalculatePrice();
             //TÄHÄN SITTEN SE OTSON KANTAAN ÄNKEMINEN JOKA EI EES VITTU TUU TÄLLE SIVULLE LEL
             
 
+            
+        }
+        private void ArrowForwardButton_Click(object sender, RoutedEventArgs e)
+        {
+            //Price price = new Price();
+            //CameraClass cameraClass = new CameraClass();
+            
+            CalculatePrice();
+            
+            if (HouseToggleButton.IsChecked == true)
+            {
+                ApartmentToggleButton.IsChecked = false;
+                RowHouseToggleButton.IsChecked = false;
+                PairHouseToggleButton.IsChecked = false;
+                SummerHouseToggleButton.IsChecked = false;
+                SaunaToggleButton.IsChecked = false;
+                //price.houseType = "HOUSE";
+                cameraClass.homeInsuranceClass.pricingParameters.houseType = "HOUSE";
+            }
+            if (ApartmentToggleButton.IsChecked == true)
+            {
+                HouseToggleButton.IsChecked = false;
+                RowHouseToggleButton.IsChecked = false;
+                PairHouseToggleButton.IsChecked = false;
+                SummerHouseToggleButton.IsChecked = false;
+                SaunaToggleButton.IsChecked = false;
+                cameraClass.homeInsuranceClass.pricingParameters.houseType = "APARTMENT";
+            }
+            if (RowHouseToggleButton.IsChecked == true)
+            {
+                HouseToggleButton.IsChecked = false;
+                ApartmentToggleButton.IsChecked = false;
+                PairHouseToggleButton.IsChecked = false;
+                SummerHouseToggleButton.IsChecked = false;
+                SaunaToggleButton.IsChecked = false;
+                cameraClass.homeInsuranceClass.pricingParameters.houseType = "ROWHOUSE";
+            }
+            if (PairHouseToggleButton.IsChecked == true)
+            {
+                HouseToggleButton.IsChecked = false;
+                ApartmentToggleButton.IsChecked = false;
+                RowHouseToggleButton.IsChecked = false;
+                SummerHouseToggleButton.IsChecked = false;
+                SaunaToggleButton.IsChecked = false;
+                cameraClass.homeInsuranceClass.pricingParameters.houseType = "PAIRHOUSE";
+            }
+            if (SummerHouseToggleButton.IsChecked == true)
+            {
+                HouseToggleButton.IsChecked = false;
+                ApartmentToggleButton.IsChecked = false;
+                RowHouseToggleButton.IsChecked = false;
+                PairHouseToggleButton.IsChecked = false;
+                SaunaToggleButton.IsChecked = false;
+                cameraClass.homeInsuranceClass.pricingParameters.houseType = "SUMMERHOUSE";
+            }
+            if (SaunaToggleButton.IsChecked == true)
+            {
+                HouseToggleButton.IsChecked = false;
+                ApartmentToggleButton.IsChecked = false;
+                RowHouseToggleButton.IsChecked = false;
+                PairHouseToggleButton.IsChecked = false;
+                SummerHouseToggleButton.IsChecked = false;
+                cameraClass.homeInsuranceClass.pricingParameters.houseType = "SAUNA";
+            }
+
+            if (MonthToggleButton.IsChecked == true)
+            {
+                QuarterToggleButton.IsChecked = false;
+                YearToggleButton.IsChecked = false;
+                cameraClass.homeInsuranceClass.pricingParameters.price.billingPeriod = "MONTH";
+                
+            }
+            if (QuarterToggleButton.IsChecked == true)
+            {
+                MonthToggleButton.IsChecked = false;
+                YearToggleButton.IsChecked = false;
+                cameraClass.homeInsuranceClass.pricingParameters.price.billingPeriod = "YEAR";
+                
+            }
+            if (YearToggleButton.IsChecked == true)
+            {
+                MonthToggleButton.IsChecked = false;
+                QuarterToggleButton.IsChecked = false;
+                cameraClass.homeInsuranceClass.pricingParameters.price.billingPeriod = "QUARTER";
+                
+            }
+            if (EuroToggleButton.IsChecked == true)
+            {
+                DollarToggleButton.IsChecked = false;
+                cameraClass.homeInsuranceClass.pricingParameters.price.currency = "EUR";
+              
+            }
+
+            if (DollarToggleButton.IsChecked == true)
+            {
+                EuroToggleButton.IsChecked = false;
+                cameraClass.homeInsuranceClass.pricingParameters.price.currency = "USD";
+            }
+
+            cameraClass.homeInsuranceClass.pricingParameters.area = OfferAreaTextBox.Text;
+            cameraClass.homeInsuranceClass.pricingParameters.buildYear = OfferBuildYearTextBox.Text;
+            cameraClass.homeInsuranceClass.pricingParameters.address= OfferAddressTextBox.Text;
+            cameraClass.homeInsuranceClass.pricingParameters.postalCode = OfferAddressTextBox.Text;
+            cameraClass.homeInsuranceClass.pricingParameters.insuranceStartDate = OfferStartDatePicker.Date.Day.ToString() + "." + OfferStartDatePicker.Date.Month.ToString() + "." + OfferStartDatePicker.Date.Year.ToString();
+            cameraClass.previousPage = "homeInsuranceOffer";
+            
+            this.Frame.Navigate(typeof(CameraPage), cameraClass);
+            
             
         }
 
