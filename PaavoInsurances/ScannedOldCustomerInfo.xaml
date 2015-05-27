@@ -31,7 +31,7 @@
     	<TextBlock Name="OldCustomerPostalCodeTextBlock" HorizontalAlignment="Left" Margin="255,543,0,0" TextWrapping="Wrap" Text="Postal code" VerticalAlignment="Top" FontSize="26.667"/>
     	<TextBox Name="OldCustomerPriceBox" HorizontalAlignment="Left" Margin="528,575,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204"/>
     	<TextBlock Name="OldCustomerPriceTextBlock" HorizontalAlignment="Left" Margin="528,543,0,0" TextWrapping="Wrap" Text="Price" VerticalAlignment="Top" FontSize="26.667"/>
-    	<Button x:Name="OldCustomerScanMeButton" HorizontalAlignment="Left" Height="110" Margin="868,381,0,0" VerticalAlignment="Top" Width="110" BorderThickness="0" Padding="0">
+    	<Button x:Name="OldCustomerScanMeButton" HorizontalAlignment="Left" Height="110" Margin="868,381,0,0" VerticalAlignment="Top" Width="110" BorderThickness="0" Padding="0" Click="OldCustomerScanMeButton_Click">
     		<Image Height="100" Source="Assets/images/scanme.png" Stretch="Fill" Width="100"/>
     	</Button>
     	<Button x:Name="OldCustomerOrderMeButton" HorizontalAlignment="Left" Height="110" Margin="868,199,0,0" VerticalAlignment="Top" Width="110" BorderThickness="0" Padding="0">

@@ -18,6 +18,7 @@ namespace PaavoInsurances
         public MediaCapture _mediaCapture = new MediaCapture();
         private Result _result;
         public string navigatedFrom = "";
+        public ScannedOldCustomerInfo.CameraClass cameraClass;
 
         public CameraPage()
         {
@@ -27,7 +28,8 @@ namespace PaavoInsurances
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
 
-            navigatedFrom = e.Parameter.ToString();
+            //navigatedFrom = e.Parameter.ToString();
+            cameraClass = (ScannedOldCustomerInfo.CameraClass)e.Parameter;
 
             try
             {
@@ -185,13 +187,23 @@ namespace PaavoInsurances
         {
             //await _mediaCapture.StopPreviewAsync();
             //this.Frame.Navigate(typeof(CameraPage));
+            navigatedFrom = cameraClass.previousPage.ToString();
+            cameraClass.homeInsuranceClass.bonusCard = _result.Text;
             if(navigatedFrom == "homePage")
             {
-                this.Frame.Navigate(typeof(ScannedOldCustomerInfo), _result.Text);
+                this.Frame.Navigate(typeof(ScannedOldCustomerInfo), cameraClass);
             }
             else if(navigatedFrom == "scannedOldCustomerInfoPage")
             {
-                this.Frame.Navigate(typeof(BonusConfirmationPage), _result.Text);
+                this.Frame.Navigate(typeof(ScannedOldCustomerInfo), cameraClass);
+            }
+            else if (navigatedFrom == "homeInsuranceOffer") 
+            {
+                this.Frame.Navigate(typeof(HomeInsuranceOrder), cameraClass);
+            }
+            else if (navigatedFrom == "homeInsuranceOrder")
+            {
+                this.Frame.Navigate(typeof(HomeInsuranceOrder), cameraClass);
             }
         }
     }

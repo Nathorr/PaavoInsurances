@@ -30,8 +30,7 @@ namespace PaavoInsurances
     public sealed partial class ScannedOldCustomerInfo : Page
     {
         public string result;
-
-        
+        public CameraClass cameraClass;
 
         public ScannedOldCustomerInfo()
         {
@@ -39,14 +38,16 @@ namespace PaavoInsurances
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            result = e.Parameter.ToString();
-            GetUserFromSqlite(result);
+            //result = e.Parameter.ToString();
+            cameraClass = (CameraClass)e.Parameter;
+
+            GetUserFromSqlite(cameraClass);
 
         }
-        async private void GetUserFromSqlite(string id)
+        async private void GetUserFromSqlite(CameraClass cameraClass)
         {
             SQLiteAsyncConnection conn = new SQLiteAsyncConnection("ClientTable");
-            var query = conn.Table<ClientTable>().Where(x => x.securityId == id);
+            var query = conn.Table<ClientTable>().Where(x => x.securityId == cameraClass.homeInsuranceClass.id);
             var result = await query.ToListAsync();
             foreach (var item in result)
             {
@@ -54,7 +55,13 @@ namespace PaavoInsurances
             }
 
         }
-       
+        
+        public class CameraClass
+        {
+            public HomeInsuranceClass homeInsuranceClass = new HomeInsuranceClass();
+            public string previousPage { get; set; }
+
+        }
 
         public class HomeInsuranceClass
         {
@@ -63,6 +70,7 @@ namespace PaavoInsurances
             public string name { get; set; }
             public string surName { get; set; }
             public string validTo { get; set; }
+            public string bonusCard { get; set; }
 
         }
         public class PricingParameters
@@ -132,6 +140,22 @@ namespace PaavoInsurances
                     
                 }
             }
+        }
+
+        private void OldCustomerScanMeButton_Click(object sender, RoutedEventArgs e)
+        {
+            CameraClass cameraClass = new CameraClass
+            {
+                previousPage = "ScannedOldCustomerInfoPage",
+                homeInsuranceClass = new HomeInsuranceClass
+                {
+                    id = result
+                }
+
+            };
+
+            this.Frame.Navigate(typeof(CameraPage), cameraClass);
+
         }
 
         
