@@ -154,6 +154,7 @@
     <Content Include="Assets\images\offerme.png" />
     <Content Include="Assets\images\pairhouse.png" />
     <Content Include="Assets\images\pets.png" />
+    <Content Include="Assets\images\priceme.png" />
     <Content Include="Assets\images\quarter.png" />
     <Content Include="Assets\images\rowhouse.png" />
     <Content Include="Assets\images\sauna.png" />
