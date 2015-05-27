@@ -21,19 +21,19 @@
         <ToggleButton x:Name="HomeToggleButton" HorizontalAlignment="Left" Margin="552,158,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0">
         	<Image Source="Assets/images/home.png" Stretch="Fill" Height="90" Width="89"/>
         </ToggleButton>
-        <ToggleButton HorizontalAlignment="Left" Margin="705,158,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0">
+        <ToggleButton x:Name="HealthToggelButton" HorizontalAlignment="Left" Margin="705,158,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
         	<Image Source="Assets/images/Health.png" Stretch="Fill" Width="90" Height="90"/>
         </ToggleButton>
-        <ToggleButton HorizontalAlignment="Left" Margin="860,158,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0">
+        <ToggleButton x:Name="VehichleToggleButton" HorizontalAlignment="Left" Margin="860,158,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
         	<Image Height="90" Source="Assets/images/vehicle.png" Stretch="Fill" Width="90"/>
         </ToggleButton>
-        <ToggleButton HorizontalAlignment="Left" Margin="552,313,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0">
+        <ToggleButton x:Name="PetsToggleButton" HorizontalAlignment="Left" Margin="552,313,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
         	<Image Height="90" Source="Assets/images/pets.png" Stretch="Fill" Width="90"/>
         </ToggleButton>
-        <ToggleButton HorizontalAlignment="Left" Margin="705,313,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0">
+        <ToggleButton x:Name="LifeToggleButton" HorizontalAlignment="Left" Margin="705,313,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
         	<Image Height="90" Source="Assets/images/life.png" Stretch="Fill" Width="90"/>
         </ToggleButton>
-        <ToggleButton HorizontalAlignment="Left" Margin="860,313,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0">
+        <ToggleButton x:Name="InfantToggleButton" HorizontalAlignment="Left" Margin="860,313,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
         	<Image Height="90" Source="Assets/images/infant.png" Stretch="Fill" Width="90"/>
         </ToggleButton>
         <TextBlock x:Name="ContactNameTextBlock" HorizontalAlignment="Left" Margin="222,157,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" FontSize="16"/>
