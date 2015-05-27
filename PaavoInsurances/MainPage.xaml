@@ -28,8 +28,8 @@
 
         <Button Content="Price" HorizontalAlignment="Left" Margin="407,1091,0,-361" VerticalAlignment="Top" />
 
-        
-        <Button x:Name="MainOfferMeButton" HorizontalAlignment="Left" Height="291" Margin="159,277,0,0" VerticalAlignment="Top" Width="309" BorderThickness="0">
+
+        <Button x:Name="MainOfferMeButton" HorizontalAlignment="Left" Height="291" Margin="159,277,0,0" VerticalAlignment="Top" Width="309" BorderThickness="0" Click="MainOfferMeButton_Click">
         	<Image Height="245" Source="Assets/images/offerme.png" Stretch="Fill" Width="245"/>
         </Button>
         <Button x:Name="MainCallMeButton" HorizontalAlignment="Left" Height="291" Margin="531,277,0,0" VerticalAlignment="Top" Width="309" BorderThickness="0" Click="Button_Click">

@@ -42,36 +42,41 @@ namespace PaavoInsurances
         }
         private void MainScanMeButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(CameraPage), "homePage");
+            //this.Frame.Navigate(typeof(CameraPage), new ScannedOldCustomerInfo.CameraClass { previousPage = "homePage" });
         }
+
+        private void MainOfferMeButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(HomeInsuranceOffer));
+        }
+
         
         private async void CreateDatabase()
         {
-            SQLiteAsyncConnection conn2 = new SQLiteAsyncConnection("ClientTable");
-            await conn2.CreateTableAsync<ClientTable>();
+            Debug.WriteLine("Funktiossa");
+            SQLiteAsyncConnection conn2 = new SQLiteAsyncConnection("SpamTable");
+            await conn2.CreateTableAsync<SpamTable>();
+            Debug.WriteLine("Taulu pitäisi olla luotu!");
         }
         private async void FillDataBase()
         {
-            SQLiteAsyncConnection conn = new SQLiteAsyncConnection("ClientTable");
+            SQLiteAsyncConnection conn = new SQLiteAsyncConnection("SpamTable");
 
-            ClientTable table = new ClientTable
+            SpamTable table = new SpamTable
             {
-                Id = "5564a5b90cf2ffffdde2e62b",
-                securityId = "191093-1472",
-                bonusCardNumber = "123123123123123",
+                name = "1",
             };
-
             await conn.InsertAsync(table);
         }
         private async void FetchData()
         {
-            SQLiteAsyncConnection conn = new SQLiteAsyncConnection("ClientTable");
+            SQLiteAsyncConnection conn = new SQLiteAsyncConnection("SpamTable");
 
-            var query = conn.Table<ClientTable>().Where(x => x.Id == "5564a5b90cf2ffffdde2e62b");
+            var query = conn.Table<SpamTable>();
             var result = await query.ToListAsync();
             foreach (var item in result)
             {
-                Debug.WriteLine(string.Format("{0}: {1} ", item.Id, item.securityId));
+                Debug.WriteLine(string.Format("{0}", item.name));
             }
         }
 

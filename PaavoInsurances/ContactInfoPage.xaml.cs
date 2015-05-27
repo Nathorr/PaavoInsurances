@@ -19,12 +19,13 @@ using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using SQLite;
 
 
 
 namespace PaavoInsurances
 {
-   
+
     public sealed partial class ContactInfoPage : Page
     {
 
@@ -33,7 +34,7 @@ namespace PaavoInsurances
         [DataContract]
         public class ReturnedData
         {
-            [DataMember(Name="postalCode")]
+            [DataMember(Name = "postalCode")]
             public string postalCode { get; set; }
             [DataMember(Name = "address")]
             public string address { get; set; }
@@ -51,7 +52,7 @@ namespace PaavoInsurances
             public string currency { get; set; }
             [DataMember(Name = "price")]
             public InsurancePrice returnPrice;
-            
+
         }
         [DataContract]
         public class InsurancePrice
@@ -112,11 +113,20 @@ namespace PaavoInsurances
             [DataMember(Name = "billingPeriod")]
             public string billingPeriod { get; set; }
         }
-     
 
         public ContactInfoPage()
         {
             this.InitializeComponent();
+        }
+
+        public class ContactInfoObject
+        {
+            public bool home { get; set; }
+            public bool health { get; set; }
+            public bool vehicle { get; set; }
+            public bool life { get; set; }
+            public bool infant { get; set; }
+            public bool pets { get; set; }
         }
 
         async private void Button_Click(object sender, RoutedEventArgs e)
@@ -132,7 +142,7 @@ namespace PaavoInsurances
             price.currency = "EUR";
             price.billingPeriod = "YEAR";
 
-           
+
 
             MemoryStream stream1 = new MemoryStream();
             DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(Price));
@@ -160,7 +170,7 @@ namespace PaavoInsurances
                 TextBlock resultbox = (TextBlock)this.FindName("resultbox");
                 resultbox.Text = obj.returnPrice.price.ToString();
             }
-            
+
         }
 
         async private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -182,16 +192,90 @@ namespace PaavoInsurances
                 Debug.WriteLine(result);
                 List<HomeInsuranceClass> deSer = JsonConvert.DeserializeObject<List<HomeInsuranceClass>>(result);
                 Debug.WriteLine(deSer[1].pricingParameters.address);
-                for(int i = 0; i < deSer.Count; i++)
+                for (int i = 0; i < deSer.Count; i++)
                 {
                     Debug.WriteLine(deSer[i].id);
                     if (nameInputBox.Text == deSer[i].surName)
                     {
                         resultbox.Text = deSer[i].name.ToString() + " " + deSer[i].pricingParameters.address.ToString();
-                        
+
                     }
                 }
             }
+        }
+
+        private async void FillDataBase(ContactInfoObject contactInfo)
+        {
+            SQLiteAsyncConnection conn = new SQLiteAsyncConnection("SpamTable");
+
+            SpamTable table = new SpamTable
+            {
+                name = ContactNameTextBox.Text,
+                email = ContactEmailTextBox.Text,
+                phone = ContactPhoneTextBox.Text,
+                home = contactInfo.home,
+                health = contactInfo.health,
+                vehicle = contactInfo.vehicle,
+                life = contactInfo.life,
+                infant = contactInfo.infant,
+                pets = contactInfo.pets
+            };
+            await conn.InsertAsync(table);
+        }
+
+        private async void FetchData()
+        {
+            SQLiteAsyncConnection conn = new SQLiteAsyncConnection("SpamTable");
+
+            var query = conn.Table<SpamTable>();
+            var result = await query.ToListAsync();
+            foreach (var item in result)
+            {
+                Debug.WriteLine(string.Format("{0}: {1} ", item.name, item.email));
+            }
+        }
+
+        private void ArrowForwardButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (ConfirmPopup.IsOpen == false)
+                ConfirmPopup.IsOpen = true;
+        }
+
+        private void ConfirmationYesButton_Click(object sender, RoutedEventArgs e)
+        {
+            ContactInfoObject contactInfo = new ContactInfoObject();
+            if (HomeToggleButton.IsChecked == true)
+                contactInfo.home = true;
+            else
+                contactInfo.home = false;
+            if (HealthToggleButton.IsChecked == true)
+                contactInfo.health = true;
+            else
+                contactInfo.health = false;
+            if (VehicleToggleButton.IsChecked == true)
+                contactInfo.vehicle = true;
+            else
+                contactInfo.vehicle = false;
+            if (PetsToggleButton.IsChecked == true)
+                contactInfo.pets = true;
+            else
+                contactInfo.pets = false;
+            if (LifeToggleButton.IsChecked == true)
+                contactInfo.life = true;
+            else
+                contactInfo.life = false;
+            if (InfantToggleButton.IsChecked == true)
+                contactInfo.infant = true;
+            else
+                contactInfo.infant = false;
+            FillDataBase(contactInfo);
+            FetchData();
+        }
+
+        private void ConfirmationNoButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (ConfirmPopup.IsOpen == true)
+                ConfirmPopup.IsOpen = false;
         }
     }
 }

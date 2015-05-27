@@ -15,40 +15,48 @@
         <Button Content="Button" HorizontalAlignment="Left" Margin="1156,1095,0,-395" VerticalAlignment="Top" Height="68" Width="128" Click="Button_Click_1"/>
         <TextBlock Name ="clientInformationBox" HorizontalAlignment="Left" FontSize="50" Margin="881,1205,0,-918" TextWrapping="Wrap" VerticalAlignment="Top" Height="481" Width="462"/>
         <Image Margin="0,0,1,0" Source="Assets/images/background.png" Stretch="Fill"/>
-        <TextBox x:Name="ContactNameTextBox" HorizontalAlignment="Left" Margin="222,180,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="188"/>
-        <TextBox x:Name="ContactEmailTextBox" HorizontalAlignment="Left" Margin="222,273,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Height="35" Width="188"/>
-        <TextBox x:Name="ContactPhoneTextBox" HorizontalAlignment="Left" Margin="222,379,0,0" TextWrapping="Wrap" Text="Phone" VerticalAlignment="Top" Height="29" Width="188"/>
+        <TextBox x:Name="ContactNameTextBox" HorizontalAlignment="Left" Margin="222,180,0,0" TextWrapping="Wrap" PlaceholderText="Name" VerticalAlignment="Top" Width="188"/>
+        <TextBox x:Name="ContactEmailTextBox" HorizontalAlignment="Left" Margin="222,273,0,0" TextWrapping="Wrap" PlaceholderText="Email" VerticalAlignment="Top" Height="35" Width="188"/>
+        <TextBox x:Name="ContactPhoneTextBox" HorizontalAlignment="Left" Margin="222,379,0,0" TextWrapping="Wrap" PlaceholderText="Phone" VerticalAlignment="Top" Height="29" Width="188"/>
         <ToggleButton x:Name="HomeToggleButton" HorizontalAlignment="Left" Margin="552,158,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0">
-        	<Image Source="Assets/images/home.png" Stretch="Fill" Height="90" Width="89"/>
+            <Image Source="Assets/images/home.png" Stretch="Fill" Height="90" Width="89"/>
         </ToggleButton>
-        <ToggleButton x:Name="HealthToggelButton" HorizontalAlignment="Left" Margin="705,158,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
-        	<Image Source="Assets/images/Health.png" Stretch="Fill" Width="90" Height="90"/>
+        <ToggleButton x:Name="HealthToggleButton" HorizontalAlignment="Left" Margin="705,158,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
+            <Image Source="Assets/images/Health.png" Stretch="Fill" Width="90" Height="90"/>
         </ToggleButton>
-        <ToggleButton x:Name="VehichleToggleButton" HorizontalAlignment="Left" Margin="860,158,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
-        	<Image Height="90" Source="Assets/images/vehicle.png" Stretch="Fill" Width="90"/>
+        <ToggleButton x:Name="VehicleToggleButton" HorizontalAlignment="Left" Margin="860,158,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
+            <Image Height="90" Source="Assets/images/vehicle.png" Stretch="Fill" Width="90"/>
         </ToggleButton>
         <ToggleButton x:Name="PetsToggleButton" HorizontalAlignment="Left" Margin="552,313,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
-        	<Image Height="90" Source="Assets/images/pets.png" Stretch="Fill" Width="90"/>
+            <Image Height="90" Source="Assets/images/pets.png" Stretch="Fill" Width="90"/>
         </ToggleButton>
         <ToggleButton x:Name="LifeToggleButton" HorizontalAlignment="Left" Margin="705,313,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
-        	<Image Height="90" Source="Assets/images/life.png" Stretch="Fill" Width="90"/>
+            <Image Height="90" Source="Assets/images/life.png" Stretch="Fill" Width="90"/>
         </ToggleButton>
         <ToggleButton x:Name="InfantToggleButton" HorizontalAlignment="Left" Margin="860,313,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
-        	<Image Height="90" Source="Assets/images/infant.png" Stretch="Fill" Width="90"/>
+            <Image Height="90" Source="Assets/images/infant.png" Stretch="Fill" Width="90"/>
         </ToggleButton>
         <TextBlock x:Name="ContactNameTextBlock" HorizontalAlignment="Left" Margin="222,157,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" FontSize="16"/>
-        <TextBlock x:Name="ContactPhoneTextBlock" HorizontalAlignment="Left" Margin="222,357,0,0" TextWrapping="Wrap" Text="Phone Number" VerticalAlignment="Top" FontSize="16"/>
-        <TextBlock x:Name="ContactEmailTextBlock" HorizontalAlignment="Left" Margin="222,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16">
-        	<Run Text="Email Addr"/>
-        	<Run Text="e"/>
-        	<Run Text="ss"/>
+        <TextBlock x:Name="ContactPhoneTextBlock" HorizontalAlignment="Left" Margin="222,357,0,0" TextWrapping="Wrap" Text="Phone number" VerticalAlignment="Top" FontSize="16"/>
+        <TextBlock x:Name="ContactEmailTextBlock" HorizontalAlignment="Left" Margin="222,251,0,0" TextWrapping="Wrap" Text="Email address" VerticalAlignment="Top" FontSize="16">
         </TextBlock>
         <Button x:Name="ArrowBackButton" HorizontalAlignment="Left" Height="109" Margin="80,72,0,0" VerticalAlignment="Top" Width="106" BorderThickness="0" Padding="0">
-        	<Image Source="Assets/images/arrowback.png" Stretch="Fill" Height="93" Width="93"/>
+            <Image Source="Assets/images/arrowback.png" Stretch="Fill" Height="93" Width="93"/>
         </Button>
-        <Button x:Name="ArrowForwardButton" HorizontalAlignment="Left" Margin="1189,631,0,0" VerticalAlignment="Top" Height="95" Width="95" BorderThickness="0" Padding="0">
-        	<Image Source="Assets/images/arrowforward.png" Stretch="Fill" Height="88" Width="88"/>
+        <Button x:Name="ArrowForwardButton" HorizontalAlignment="Left" Margin="1189,631,0,0" VerticalAlignment="Top" Height="95" Width="95" BorderThickness="0" Padding="0" Click="ArrowForwardButton_Click">
+            <Image Source="Assets/images/arrowforward.png" Stretch="Fill" Height="88" Width="88"/>
         </Button>
+        <Popup Name="ConfirmPopup" Margin="334,106,353,160" IsOpen="False">
+            <Grid Background="#FF209CCC" Height="502" Width="679">
+                <TextBlock x:Name="ConfirmTextBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Confirm?" VerticalAlignment="Top" FontSize="96" FontFamily="Merriweather Sans" FontWeight="Bold" Margin="126,60,0,0"/>
+                <Button x:Name="ConfirmationYesButton" Click="ConfirmationYesButton_Click" HorizontalAlignment="Left" Height="193" VerticalAlignment="Top" Width="193" BorderThickness="0" Padding="0" Margin="123,249,0,0">
+                    <Image Source="Assets/images/yes.png" Stretch="Fill" Height="187" Width="187"/>
+                </Button>
+                <Button x:Name="ConfirmationNoButton" Click="ConfirmationNoButton_Click" HorizontalAlignment="Left" Height="193" VerticalAlignment="Top" Width="193" BorderThickness="0" Padding="0" Margin="381,249,0,0">
+                    <Image Source="Assets/images/no.png" Stretch="Fill" Height="185" Width="187"/>
+                </Button>
+            </Grid>
+        </Popup>
 
     </Grid>
 </Page>

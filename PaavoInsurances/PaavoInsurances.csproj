@@ -105,9 +105,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BonusConfirmationPage.xaml.cs">
-      <DependentUpon>BonusConfirmationPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="CameraPage.xaml.cs">
       <DependentUpon>CameraPage.xaml</DependentUpon>
     </Compile>
@@ -116,9 +113,6 @@
       <DependentUpon>HomeInsuranceOffer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Price.cs" />
-    <Compile Include="ConfirmationPage.xaml.cs">
-      <DependentUpon>ConfirmationPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ContactInfoPage.xaml.cs">
       <DependentUpon>ContactInfoPage.xaml</DependentUpon>
     </Compile>
@@ -183,17 +177,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="BonusConfirmationPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="CameraPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ConfirmationPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ContactInfoPage.xaml">
       <SubType>Designer</SubType>
