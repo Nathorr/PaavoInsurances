@@ -171,7 +171,7 @@ namespace PaavoInsurances
                 resultbox.Text = obj.returnPrice.price.ToString();
             }
 
-        }*/
+        }
 
         async private void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -202,7 +202,7 @@ namespace PaavoInsurances
                     }
                 }
             }
-        }
+        }*/
 
         private async void FillDataBase(ContactInfoObject contactInfo)
         {

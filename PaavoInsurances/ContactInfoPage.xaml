@@ -8,12 +8,6 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button Content="Calculate price" HorizontalAlignment="Left" FontSize="45" Margin="80,971,0,-450" VerticalAlignment="Top" Height="247" Width="410" Click="Button_Click"/>
-        <TextBlock Name="resultbox" HorizontalAlignment="Left" FontSize="70" Margin="179,1321,0,-720" TextWrapping="Wrap" VerticalAlignment="Top" Height="167" Width="231"/>
-        <TextBlock HorizontalAlignment="Left" Margin="533,1071,0,-340" TextWrapping="Wrap" FontSize="30" Text="Price" VerticalAlignment="Top" Height="37" Width="95"/>
-        <TextBox Name="nameInputBox" HorizontalAlignment="Left" Margin="881,1071,0,-392"  FontSize="50" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="89" Width="234"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="1156,1095,0,-395" VerticalAlignment="Top" Height="68" Width="128" Click="Button_Click_1"/>
-        <TextBlock Name ="clientInformationBox" HorizontalAlignment="Left" FontSize="50" Margin="881,1205,0,-918" TextWrapping="Wrap" VerticalAlignment="Top" Height="481" Width="462"/>
         <Image Margin="0,0,1,0" Source="Assets/images/background.png" Stretch="Fill"/>
         <TextBox x:Name="ContactNameTextBox" HorizontalAlignment="Left" Margin="222,180,0,0" TextWrapping="Wrap" PlaceholderText="Name" VerticalAlignment="Top" Width="188"/>
         <TextBox x:Name="ContactEmailTextBox" HorizontalAlignment="Left" Margin="222,273,0,0" TextWrapping="Wrap" PlaceholderText="Email" VerticalAlignment="Top" Height="35" Width="188"/>
