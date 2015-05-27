@@ -8,14 +8,13 @@ namespace PaavoInsurances
 {
     public class Price
     {
-        public int postalCode { get; set; }
+        public string postalCode { get; set; }
         public string address { get; set; }
-        public float area { get; set; }
-        public int buildYear { get; set; }
+        public string area { get; set; }
+        public string buildYear { get; set; }
         public string insuranceStartDate { get; set; }
         public string houseType { get; set; }
         public string billingPeriod { get; set; }
         public string currency { get; set; }
-        
     }
 }
