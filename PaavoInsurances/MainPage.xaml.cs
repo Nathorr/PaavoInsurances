@@ -42,7 +42,7 @@ namespace PaavoInsurances
         }
         private void MainScanMeButton_Click(object sender, RoutedEventArgs e)
         {
-            //this.Frame.Navigate(typeof(CameraPage), new ScannedOldCustomerInfo.CameraClass { previousPage = "homePage" });
+            this.Frame.Navigate(typeof(CameraPage), new ScannedOldCustomerInfo.CameraClass { previousPage = "homePage" });
         }
 
         private void MainOfferMeButton_Click(object sender, RoutedEventArgs e)
