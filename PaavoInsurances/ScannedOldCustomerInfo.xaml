@@ -8,6 +8,35 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    	<Image Margin="0,0,1,0" Source="Assets/images/background.png" Stretch="Fill"/>
+    	<Button x:Name="ArrowBackButton" HorizontalAlignment="Left" Height="109" Margin="80,72,0,0" VerticalAlignment="Top" Width="106" BorderThickness="0" Padding="0">
+    		<Image Source="Assets/images/arrowback.png" Stretch="Fill" Height="93" Width="93"/>
+    	</Button>
+    	<Button x:Name="ArrowForwardButton" HorizontalAlignment="Left" Margin="1189,631,0,0" VerticalAlignment="Top" Height="95" Width="95" BorderThickness="0" Padding="0">
+    		<Image Source="Assets/images/arrowforward.png" Stretch="Fill" Height="88" Width="88"/>
+    	</Button>
+    	<TextBox x:Name="OldCustomerLastNameTextBox" HorizontalAlignment="Left" Margin="255,342,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
+    	<TextBox x:Name="OldCustomerFirstNameTextBox" HorizontalAlignment="Left" Margin="255,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
+    	<TextBox x:Name="OldCustomerAreaTextBox" HorizontalAlignment="Left" Margin="528,471,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204"/>
+    	<TextBox x:Name="OldCustomerBuildYearTextBox" HorizontalAlignment="Left" Margin="528,342,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204"/>
+    	<TextBox x:Name="OldCustomerHouseTypeTextBox" HorizontalAlignment="Left" Margin="528,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204"/>
+    	<TextBox x:Name="OldCustomerAddressTextBox" HorizontalAlignment="Left" Margin="255,471,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
+    	<TextBlock x:Name="OldCustomerFirstNameTextBlock" HorizontalAlignment="Left" Margin="255,197,0,0" TextWrapping="Wrap" Text="First name" VerticalAlignment="Top" FontSize="26.667"/>
+    	<TextBlock x:Name="OldCustomerAreaTextBlock" HorizontalAlignment="Left" Margin="528,434,0,0" TextWrapping="Wrap" Text="Area" VerticalAlignment="Top" FontSize="26.667"/>
+    	<TextBlock x:Name="OldCustomerBuildYearTextBlock" HorizontalAlignment="Left" Margin="528,310,0,0" TextWrapping="Wrap" Text="Build year" VerticalAlignment="Top" FontSize="26.667"/>
+    	<TextBlock x:Name="OldCustomerHouseTypeTextBlock" HorizontalAlignment="Left" Margin="528,202,0,0" TextWrapping="Wrap" Text="House type" VerticalAlignment="Top" FontSize="26.667"/>
+    	<TextBlock x:Name="OldCustomerAddressTextBlock" HorizontalAlignment="Left" Margin="255,439,0,0" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top" FontSize="26.667"/>
+    	<TextBlock x:Name="OldCustomerLastNameTextBlock" HorizontalAlignment="Left" Margin="255,310,0,0" TextWrapping="Wrap" Text="Last name" VerticalAlignment="Top" FontSize="26.667"/>
+    	<TextBox x:Name="OldCustomerPostalCodeTextBox" HorizontalAlignment="Left" Margin="255,575,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
+    	<TextBlock x:Name="OldCustomerPostalCodeTextBlock" HorizontalAlignment="Left" Margin="255,543,0,0" TextWrapping="Wrap" Text="Postal code" VerticalAlignment="Top" FontSize="26.667"/>
+    	<TextBox x:Name="OldCustomerPriceBox" HorizontalAlignment="Left" Margin="528,575,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204"/>
+    	<TextBlock x:Name="OldCustomerPriceTextBlock" HorizontalAlignment="Left" Margin="528,543,0,0" TextWrapping="Wrap" Text="Price" VerticalAlignment="Top" FontSize="26.667"/>
+    	<Button x:Name="OldCustomerScanMeButton" HorizontalAlignment="Left" Height="110" Margin="868,381,0,0" VerticalAlignment="Top" Width="110" BorderThickness="0" Padding="0">
+    		<Image Height="100" Source="Assets/images/scanme.png" Stretch="Fill" Width="100"/>
+    	</Button>
+    	<Button x:Name="OldCustomerOrderMeButton" HorizontalAlignment="Left" Height="110" Margin="868,199,0,0" VerticalAlignment="Top" Width="110" BorderThickness="0" Padding="0">
+    		<Image Height="100" Source="Assets/images/offerme.png" Stretch="Fill" Width="100"/>
+    	</Button>
 
     </Grid>
 </Page>

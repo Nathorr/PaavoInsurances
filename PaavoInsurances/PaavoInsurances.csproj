@@ -109,6 +109,9 @@
       <DependentUpon>BonusConfirmationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ClientTable.cs" />
+    <Compile Include="HomeInsuranceOffer.xaml.cs">
+      <DependentUpon>HomeInsuranceOffer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Price.cs" />
     <Compile Include="ConfirmationPage.xaml.cs">
       <DependentUpon>ConfirmationPage.xaml</DependentUpon>
@@ -186,6 +189,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ContactInfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HomeInsuranceOffer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

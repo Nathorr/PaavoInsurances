@@ -8,7 +8,29 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button Content="Send insurance information" FontSize="30" HorizontalAlignment="Left" Margin="431,379,0,0" VerticalAlignment="Top" Height="217" Width="416" Click="Button_Click"/>
+        <Button Content="Send insurance information" FontSize="30" HorizontalAlignment="Left" Margin="407,1335,0,-784" VerticalAlignment="Top" Height="217" Width="416" Click="Button_Click"/>
+        <Image Margin="0,0,1,0" Source="Assets/images/background.png" Stretch="Fill"/>
+        <Button x:Name="ArrowBackButton" HorizontalAlignment="Left" Height="109" Margin="80,72,0,0" VerticalAlignment="Top" Width="106" BorderThickness="0" Padding="0">
+        	<Image Source="Assets/images/arrowback.png" Stretch="Fill" Height="93" Width="93"/>
+        </Button>
+        <Button x:Name="ArrowForwardButton" HorizontalAlignment="Left" Margin="1189,631,0,0" VerticalAlignment="Top" Height="95" Width="95" BorderThickness="0" Padding="0">
+        	<Image Source="Assets/images/arrowforward.png" Stretch="Fill" Height="88" Width="88"/>
+        </Button>
+        <TextBox x:Name="OrderFirstNameTextBox" HorizontalAlignment="Left" Margin="272,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
+        <TextBox x:Name="OrderLastNameTextBox" HorizontalAlignment="Left" Margin="272,304,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
+        <TextBox x:Name="OrderIDTextBox" HorizontalAlignment="Left" Margin="272,412,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
+        <TextBox x:Name="OrderPriceTextBox" HorizontalAlignment="Left" Margin="588,412,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168"/>
+        <TextBox x:Name="OrderBonusCardTextBox" HorizontalAlignment="Left" Margin="588,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168"/>
+        <TextBlock x:Name="OrderFirstNameTextBlock" HorizontalAlignment="Left" Margin="272,178,0,0" TextWrapping="Wrap" Text="First name" VerticalAlignment="Top" FontSize="26.667"/>
+        <TextBlock x:Name="OrderSecurityIDTextBlock" HorizontalAlignment="Left" Margin="272,380,0,0" TextWrapping="Wrap" Text="Security ID" VerticalAlignment="Top" FontSize="26.667"/>
+        <TextBlock x:Name="OrderLastNameTextBlock" HorizontalAlignment="Left" Margin="272,272,0,0" TextWrapping="Wrap" Text="Last name" VerticalAlignment="Top" FontSize="26.667"/>
+        <TextBlock x:Name="OrderBonusCardTextBlock" HorizontalAlignment="Left" Margin="588,178,0,0" TextWrapping="Wrap" Text="Bonus card" VerticalAlignment="Top" FontSize="26.667"/>
+        <TextBlock x:Name="OrderValidToTextBlock" HorizontalAlignment="Left" Margin="588,272,0,0" TextWrapping="Wrap" Text="Valid to" VerticalAlignment="Top" FontSize="26.667"/>
+        <TextBlock x:Name="OrderPriceTextBlock" HorizontalAlignment="Left" Margin="588,380,0,0" TextWrapping="Wrap" Text="Price" VerticalAlignment="Top" FontSize="26.667"/>
+        <DatePicker x:Name="OrderValidToDatePicker" HorizontalAlignment="Left" Margin="588,304,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="ScanMeButton" HorizontalAlignment="Left" Height="110" Margin="958,156,0,0" VerticalAlignment="Top" Width="110" BorderThickness="0" Padding="0">
+        	<Image Height="100" Source="Assets/images/scanme.png" Stretch="Fill" Width="100"/>
+        </Button>
 
     </Grid>
 </Page>
