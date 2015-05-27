@@ -229,9 +229,10 @@ namespace PaavoInsurances
 
             var query = conn.Table<SpamTable>();
             var result = await query.ToListAsync();
+            DatabaseList.Text = "Name\tEmail\tPhone\tHome\tHealth\tVehicle\tLife\tInfant\tPets\n\n";
             foreach (var item in result)
             {
-                Debug.WriteLine(string.Format("{0}: {1} ", item.name, item.email));
+                DatabaseList.Text += item.name + "\t" + item.email + "\t" + item.phone + "\t" + item.home + "\t" + item.health + "\t" + item.vehicle + "\t" + item.life + "\t" + item.infant + "\t" + item.pets + "\n";
             }
         }
 
@@ -269,6 +270,7 @@ namespace PaavoInsurances
             else
                 contactInfo.infant = false;
             FillDataBase(contactInfo);
+            ContactInfoPopup.IsOpen = true;
             FetchData();
         }
 
@@ -276,6 +278,11 @@ namespace PaavoInsurances
         {
             if (ConfirmPopup.IsOpen == true)
                 ConfirmPopup.IsOpen = false;
+        }
+
+        private void ArrowBackButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage));
         }
     }
 }

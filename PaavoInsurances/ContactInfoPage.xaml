@@ -34,7 +34,7 @@
         <TextBlock x:Name="ContactPhoneTextBlock" HorizontalAlignment="Left" Margin="222,357,0,0" TextWrapping="Wrap" Text="Phone number" VerticalAlignment="Top" FontSize="16"/>
         <TextBlock x:Name="ContactEmailTextBlock" HorizontalAlignment="Left" Margin="222,251,0,0" TextWrapping="Wrap" Text="Email address" VerticalAlignment="Top" FontSize="16">
         </TextBlock>
-        <Button x:Name="ArrowBackButton" HorizontalAlignment="Left" Height="109" Margin="80,72,0,0" VerticalAlignment="Top" Width="106" BorderThickness="0" Padding="0">
+        <Button x:Name="ArrowBackButton" HorizontalAlignment="Left" Height="109" Margin="80,72,0,0" VerticalAlignment="Top" Width="106" BorderThickness="0" Padding="0" Click="ArrowBackButton_Click">
             <Image Source="Assets/images/arrowback.png" Stretch="Fill" Height="93" Width="93"/>
         </Button>
         <Button x:Name="ArrowForwardButton" HorizontalAlignment="Left" Margin="1189,631,0,0" VerticalAlignment="Top" Height="95" Width="95" BorderThickness="0" Padding="0" Click="ArrowForwardButton_Click">
@@ -51,6 +51,10 @@
                 </Button>
             </Grid>
         </Popup>
-
+        <Popup Name="ContactInfoPopup" Margin="222,106,211,134" IsOpen="False">
+            <Grid Background="#FF209CCC" Height="526" Width="934" d:IsLocked="True">
+                <TextBlock x:Name="DatabaseList" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="16" FontFamily="Merriweather Sans" FontWeight="Bold" Margin="126,60,0,0"/>
+            </Grid>
+        </Popup>
     </Grid>
 </Page>
