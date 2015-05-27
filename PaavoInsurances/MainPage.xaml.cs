@@ -24,10 +24,12 @@ namespace PaavoInsurances
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        
         public MainPage()
         {
             this.InitializeComponent();
         }
+        
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -38,41 +40,46 @@ namespace PaavoInsurances
         {
             this.Frame.Navigate(typeof(HomeInsuranceOrder));
         }
+        private void MainScanMeButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(CameraPage), "homePage");
+        }
+        
         private async void CreateDatabase()
         {
-            SQLiteAsyncConnection conn1 = new SQLiteAsyncConnection("spamTable");
-            await conn1.CreateTableAsync<SpamTable>();
-            SQLiteAsyncConnection conn2 = new SQLiteAsyncConnection("clientTable");
+            SQLiteAsyncConnection conn2 = new SQLiteAsyncConnection("ClientTable");
             await conn2.CreateTableAsync<ClientTable>();
         }
         private async void FillDataBase()
         {
-            SQLiteAsyncConnection conn = new SQLiteAsyncConnection("spamTable");
+            SQLiteAsyncConnection conn = new SQLiteAsyncConnection("ClientTable");
 
-            SpamTable spam = new SpamTable
+            ClientTable table = new ClientTable
             {
-                name = "Matteo Perse",
-                home = true,
-
+                Id = "5564a5b90cf2ffffdde2e62b",
+                securityId = "191093-1472",
+                bonusCardNumber = "123123123123123",
             };
 
-            await conn.InsertAsync(spam);
+            await conn.InsertAsync(table);
         }
         private async void FetchData()
         {
-            SQLiteAsyncConnection conn = new SQLiteAsyncConnection("spamTable");
+            SQLiteAsyncConnection conn = new SQLiteAsyncConnection("ClientTable");
 
-            var query = conn.Table<SpamTable>().Where(x => x.name == "Matteo Perse");
+            var query = conn.Table<ClientTable>().Where(x => x.Id == "5564a5b90cf2ffffdde2e62b");
             var result = await query.ToListAsync();
             foreach (var item in result)
             {
-                Debug.WriteLine(string.Format("{0}: {1} {2}", item.Id, item.name, item.home));
+                Debug.WriteLine(string.Format("{0}: {1} ", item.Id, item.securityId));
             }
         }
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            FillDataBase();
-            FetchData();
+            //CreateDatabase();
+            //FillDataBase();
+            //FetchData();
         }
     }
 }

@@ -75,7 +75,7 @@ namespace PaavoInsurances
             ClientTable client = new ClientTable
             {
                 Id = id,
-                socialSecurityId = scanId,
+                securityId = scanId,
             };
 
             await conn.InsertAsync(client);
