@@ -22,12 +22,11 @@
     </Page.Resources>
 
     <Grid Background="#FF02AFFF">
-<<<<<<< HEAD
         <Button Content="Price" HorizontalAlignment="Left" Margin="449,400,0,0" VerticalAlignment="Top" Click="Button_Click"/>
         <Button Content="Make db" HorizontalAlignment="Left" Margin="191,313,0,0" VerticalAlignment="Top" Click="Button_Click_2" Height="109" Width="182"/>
-=======
+
         <Button Content="Price" HorizontalAlignment="Left" Margin="449,400,0,0" VerticalAlignment="Top" />
->>>>>>> origin/master
+
         <Button Content="Send data" HorizontalAlignment="Left" Margin="825,418,0,0" VerticalAlignment="Top" Height="171" Width="301" Click="Button_Click_1"/>
         <Button Content="Button" Margin="120,295,955,182" Style="{StaticResource ButtonStyle1}" Click="Button_Click"/>
     </Grid>
