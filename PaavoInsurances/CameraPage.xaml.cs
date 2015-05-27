@@ -188,21 +188,25 @@ namespace PaavoInsurances
             //await _mediaCapture.StopPreviewAsync();
             //this.Frame.Navigate(typeof(CameraPage));
             navigatedFrom = cameraClass.previousPage.ToString();
-            cameraClass.homeInsuranceClass.bonusCard = _result.Text;
+         
             if(navigatedFrom == "homePage")
             {
+                cameraClass.homeInsuranceClass.id = _result.Text;
                 this.Frame.Navigate(typeof(ScannedOldCustomerInfo), cameraClass);
             }
             else if(navigatedFrom == "scannedOldCustomerInfoPage")
             {
+                cameraClass.homeInsuranceClass.id = _result.Text;
                 this.Frame.Navigate(typeof(ScannedOldCustomerInfo), cameraClass);
             }
             else if (navigatedFrom == "homeInsuranceOffer") 
             {
+                cameraClass.homeInsuranceClass.id = _result.Text;
                 this.Frame.Navigate(typeof(HomeInsuranceOrder), cameraClass);
             }
             else if (navigatedFrom == "homeInsuranceOrder")
             {
+                cameraClass.homeInsuranceClass.bonusCard = _result.Text;
                 this.Frame.Navigate(typeof(HomeInsuranceOrder), cameraClass);
             }
         }
