@@ -69,6 +69,8 @@ namespace PaavoInsurances
         {
             [DataMember(Name = "pricingParameters")]
             public PricingParameters pricingParameters = new PricingParameters();
+            [DataMember(Name = "id")]
+            public string id { get; set; }
             [DataMember(Name = "name")]
             public string name { get; set; }
             [DataMember(Name = "surName")]
@@ -164,7 +166,7 @@ namespace PaavoInsurances
         async private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             TextBlock resultbox = (TextBlock)this.FindName("clientInformationBox");
-            
+            resultbox.Text = "";
             string RequestUrl = "http://185.20.136.51/sellertool/applications/";
 
             HttpClient clientOb = new HttpClient();
@@ -182,13 +184,13 @@ namespace PaavoInsurances
                 Debug.WriteLine(deSer[1].pricingParameters.address);
                 for(int i = 0; i < deSer.Count; i++)
                 {
+                    Debug.WriteLine(deSer[i].id);
                     if (nameInputBox.Text == deSer[i].surName)
                     {
                         resultbox.Text = deSer[i].name.ToString() + " " + deSer[i].pricingParameters.address.ToString();
+                        
                     }
                 }
-
-               
             }
         }
     }

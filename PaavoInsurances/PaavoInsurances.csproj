@@ -108,6 +108,7 @@
     <Compile Include="BonusConfirmationPage.xaml.cs">
       <DependentUpon>BonusConfirmationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ClientTable.cs" />
     <Compile Include="Price.cs" />
     <Compile Include="ConfirmationPage.xaml.cs">
       <DependentUpon>ConfirmationPage.xaml</DependentUpon>
@@ -125,6 +126,9 @@
     <Compile Include="ScannedOldCustomerInfo.xaml.cs">
       <DependentUpon>ScannedOldCustomerInfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SpamTable.cs" />
+    <Compile Include="SQLite.cs" />
+    <Compile Include="SQLiteAsync.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -173,6 +177,14 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\netcore45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.VCLibs, version=12.0">
+      <Name>Microsoft Visual C++ 2013 Runtime Package for Windows</Name>
+    </SDKReference>
+    <SDKReference Include="SQLite.WinRT81, Version=3.8.10.2">
+      <Name>SQLite for Windows Runtime %28Windows 8.1%29</Name>
+    </SDKReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>

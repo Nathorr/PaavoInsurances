@@ -18,6 +18,7 @@ using System.Net.Http;
 using System.Text;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
+using SQLite;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -34,8 +35,6 @@ namespace PaavoInsurances
             this.InitializeComponent();
         }
       
-        
-        [DataContract]
         public class HomeInsuranceClass
         {
             public PricingParameters pricingParameters = new PricingParameters();
@@ -63,25 +62,43 @@ namespace PaavoInsurances
             public string currency { get; set; }
             public string billingPeriod { get; set; }
         }
+        public class ReturnId
+        {
+            public string id { get; set; }
+        }
         public HomeInsuranceClass homeInsurance = new HomeInsuranceClass();
+       
+        async private void InsertId(string id, string scanId)
+        {
+            SQLiteAsyncConnection conn = new SQLiteAsyncConnection("clientTable");
+
+            ClientTable client = new ClientTable
+            {
+                Id = id,
+                socialSecurityId = scanId,
+            };
+
+            await conn.InsertAsync(client);
+        }
+
         async private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.homeInsurance.name = "Paavo";
-            this.homeInsurance.surName = "Insurances";
-            this.homeInsurance.validTo = "13.07.2015";
-            this.homeInsurance.pricingParameters.postalCode = "00100";
-            this.homeInsurance.pricingParameters.address = "Nested objects parasta just nyt. :)";
-            this.homeInsurance.pricingParameters.area = "79.5";
-            this.homeInsurance.pricingParameters.buildYear = "1520";
-            this.homeInsurance.pricingParameters.insuranceStartDate = "12.08.2016";
-            this.homeInsurance.pricingParameters.houseType = "APARTMENT";
-            this.homeInsurance.pricingParameters.currency = "EUR";
-            this.homeInsurance.pricingParameters.billingPeriod = "YEAR";
-            this.homeInsurance.pricingParameters.price.price = "280";
-            this.homeInsurance.pricingParameters.price.currency = "EUR";
-            this.homeInsurance.pricingParameters.price.billingPeriod = "YEAR";
-
-            string sr_string = JsonConvert.SerializeObject(homeInsurance, Formatting.Indented);
+            homeInsurance.name = "asdasd";
+            homeInsurance.surName = "asdasd";
+            homeInsurance.validTo = "13.07.2015";
+            homeInsurance.pricingParameters.postalCode = "00100";
+            homeInsurance.pricingParameters.address = "asdasdasd";
+            homeInsurance.pricingParameters.area = "79.5";
+            homeInsurance.pricingParameters.buildYear = "1520";
+            homeInsurance.pricingParameters.insuranceStartDate = "12.08.2016";
+            homeInsurance.pricingParameters.houseType = "APARTMENT";
+            homeInsurance.pricingParameters.currency = "EUR";
+            homeInsurance.pricingParameters.billingPeriod = "YEAR";
+            homeInsurance.pricingParameters.price.price = "280";
+            homeInsurance.pricingParameters.price.currency = "EUR";
+            homeInsurance.pricingParameters.price.billingPeriod = "YEAR";
+            
+            string sr_string = JsonConvert.SerializeObject(this.homeInsurance, Formatting.Indented);
             Debug.WriteLine("Post: " +sr_string);
 
             string RequestUrl = "http://185.20.136.51/sellertool/applications/";
@@ -95,8 +112,9 @@ namespace PaavoInsurances
             Debug.WriteLine(response);
             using (HttpContent content = response.Content)
             {
+                //ID joka yhistetään tauluun henkkaritunnuksen kanssa.
                 var result = await content.ReadAsStringAsync();
-                Debug.WriteLine(result);
+                InsertId(result, "asdasda");
             }
 
         }

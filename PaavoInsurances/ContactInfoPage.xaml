@@ -13,7 +13,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="485,123,0,0" TextWrapping="Wrap" FontSize="30" Text="Price" VerticalAlignment="Top" Height="37" Width="95"/>
         <TextBox Name="nameInputBox" HorizontalAlignment="Left" Margin="833,123,0,0"  FontSize="50" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="89" Width="234"/>
         <Button Content="Button" HorizontalAlignment="Left" Margin="1108,147,0,0" VerticalAlignment="Top" Height="68" Width="128" Click="Button_Click_1"/>
-        <TextBlock Name ="clientInformationBox" HorizontalAlignment="Left" Margin="833,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="481" Width="462"/>
+        <TextBlock Name ="clientInformationBox" HorizontalAlignment="Left" FontSize="50" Margin="833,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="481" Width="462"/>
 
     </Grid>
 </Page>
