@@ -129,7 +129,7 @@ namespace PaavoInsurances
             public bool pets { get; set; }
         }
 
-        async private void Button_Click(object sender, RoutedEventArgs e)
+        /*async private void Button_Click(object sender, RoutedEventArgs e)
         {
             Price price = new Price();
 
@@ -171,7 +171,7 @@ namespace PaavoInsurances
                 resultbox.Text = obj.returnPrice.price.ToString();
             }
 
-        }
+        }*/
 
         async private void Button_Click_1(object sender, RoutedEventArgs e)
         {
