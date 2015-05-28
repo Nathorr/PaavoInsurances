@@ -145,6 +145,7 @@
     <Content Include="Assets\images\arrowforward.png" />
     <Content Include="Assets\images\background.png" />
     <Content Include="Assets\images\bonus.png" />
+    <Content Include="Assets\images\bonus2.png" />
     <Content Include="Assets\images\callme.png" />
     <Content Include="Assets\images\Euro.png" />
     <Content Include="Assets\images\Health.png" />

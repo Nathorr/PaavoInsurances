@@ -15,22 +15,22 @@
 				<Image Source="Assets/images/arrowback.png" Stretch="Fill" Height="93" Width="93"/>
 			</Button>
 			<Button x:Name="ArrowForwardButton" HorizontalAlignment="Left" Margin="1189,631,0,0" VerticalAlignment="Top" Height="95" Width="95" BorderThickness="0" Padding="0" Click="ArrowForwardButton_Click">
-				<Image Source="Assets/images/arrowforward.png" Stretch="Fill" Height="88" Width="88"/>
+				<Image Source="Assets/images/yes.png" Stretch="Fill" Height="88" Width="88"/>
 			</Button>
-			<TextBox Name="OrderFirstNameTextBox" HorizontalAlignment="Left" Margin="272,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
-			<TextBox Name="OrderLastNameTextBox" HorizontalAlignment="Left" Margin="272,304,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
-			<TextBox x:Name="OrderIDTextBox" HorizontalAlignment="Left" Margin="272,412,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
-			<TextBox x:Name="OrderPriceTextBox" HorizontalAlignment="Left" Margin="588,412,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168"/>
-			<TextBox x:Name="OrderBonusCardTextBox" HorizontalAlignment="Left" Margin="588,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168"/>
-			<TextBlock x:Name="OrderFirstNameTextBlock" HorizontalAlignment="Left" Margin="272,178,0,0" TextWrapping="Wrap" Text="First name" VerticalAlignment="Top" FontSize="26.667"/>
-			<TextBlock x:Name="OrderSecurityIDTextBlock" HorizontalAlignment="Left" Margin="272,380,0,0" TextWrapping="Wrap" Text="Security ID" VerticalAlignment="Top" FontSize="26.667"/>
-			<TextBlock x:Name="OrderLastNameTextBlock" HorizontalAlignment="Left" Margin="272,272,0,0" TextWrapping="Wrap" Text="Last name" VerticalAlignment="Top" FontSize="26.667"/>
-			<TextBlock x:Name="OrderBonusCardTextBlock" HorizontalAlignment="Left" Margin="588,178,0,0" TextWrapping="Wrap" Text="Bonus card" VerticalAlignment="Top" FontSize="26.667"/>
-			<TextBlock x:Name="OrderValidToTextBlock" HorizontalAlignment="Left" Margin="588,272,0,0" TextWrapping="Wrap" Text="Valid to" VerticalAlignment="Top" FontSize="26.667"/>
-			<TextBlock x:Name="OrderPriceTextBlock" HorizontalAlignment="Left" Margin="588,380,0,0" TextWrapping="Wrap" Text="Price" VerticalAlignment="Top" FontSize="26.667"/>
-			<DatePicker x:Name="OrderValidToDatePicker" HorizontalAlignment="Left" Margin="588,304,0,0" VerticalAlignment="Top"/>
-			<Button x:Name="ScanMeButton" HorizontalAlignment="Left" Height="110" Margin="958,156,0,0" VerticalAlignment="Top" Width="110" BorderThickness="0" Padding="0" Click="ScanMeButton_Click">
-				<Image Height="100" Source="Assets/images/scanme.png" Stretch="Fill" Width="100"/>
+			<TextBox Name="OrderFirstNameTextBox" HorizontalAlignment="Left" Margin="272,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207"/>
+			<TextBox Name="OrderLastNameTextBox" HorizontalAlignment="Left" Margin="272,342,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207"/>
+			<TextBox x:Name="OrderIDTextBox" HorizontalAlignment="Left" Margin="272,440,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207"/>
+			<TextBox x:Name="OrderPriceTextBox" HorizontalAlignment="Left" Margin="588,528,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="294" FontFamily="Merriweather Sans" FontWeight="Bold" FontSize="48" Height="58"/>
+			<TextBox x:Name="OrderBonusCardTextBox" HorizontalAlignment="Left" Margin="588,440,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="294"/>
+			<TextBlock x:Name="OrderFirstNameTextBlock" HorizontalAlignment="Left" Margin="272,187,0,0" TextWrapping="Wrap" Text="First name" VerticalAlignment="Top" FontSize="32" Style="{StaticResource TextStyleNormal}" FontFamily="Merriweather Sans" FontWeight="Bold"/>
+			<TextBlock x:Name="OrderSecurityIDTextBlock" HorizontalAlignment="Left" Margin="269,395,0,0" TextWrapping="Wrap" Text="Security ID" VerticalAlignment="Top" FontSize="32" FontFamily="Merriweather Sans" FontWeight="Bold"/>
+			<TextBlock x:Name="OrderLastNameTextBlock" HorizontalAlignment="Left" Margin="272,297,0,0" TextWrapping="Wrap" Text="Last name" VerticalAlignment="Top" FontSize="32" FontFamily="Merriweather Sans" FontWeight="Bold"/>
+			<TextBlock x:Name="OrderBonusCardTextBlock" HorizontalAlignment="Left" Margin="588,395,0,0" TextWrapping="Wrap" Text="Bonus card" VerticalAlignment="Top" FontSize="32" FontFamily="Merriweather Sans" FontWeight="Bold"/>
+			<TextBlock x:Name="OrderValidToTextBlock" HorizontalAlignment="Left" Margin="588,187,0,0" TextWrapping="Wrap" Text="Valid to" VerticalAlignment="Top" FontSize="32" FontFamily="Merriweather Sans" FontWeight="Bold"/>
+			<TextBlock x:Name="OrderPriceTextBlock" HorizontalAlignment="Left" Margin="317,518,0,0" TextWrapping="Wrap" Text="Price" VerticalAlignment="Top" FontSize="64" FontFamily="Merriweather Sans" FontWeight="Bold"/>
+			<DatePicker x:Name="OrderValidToDatePicker" HorizontalAlignment="Left" Margin="588,228,0,0" VerticalAlignment="Top" Width="294"/>
+			<Button x:Name="ScanMeButton" HorizontalAlignment="Left" Height="78" Margin="585,299,0,0" VerticalAlignment="Top" Width="300" BorderThickness="0" Padding="0" Click="ScanMeButton_Click">
+				<Image Source="Assets/images/bonus2.png" Stretch="Fill"/>
 			</Button>
 			<Popup x:Name="ConfirmPopup" Margin="334,106,353,160" IsOpen="False">
 				<Grid Background="#FF209CCC" Height="502" Width="679">
@@ -43,6 +43,11 @@
 					</Button>
 				</Grid>
 			</Popup>
+			<Image Margin="966.5,134,89.5,490" Source="Assets/images/logosmall.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
+				<Image.RenderTransform>
+					<CompositeTransform Rotation="12.247"/>
+				</Image.RenderTransform>
+			</Image>
 		</Grid>
 	</Viewbox>
 </Page>
