@@ -350,5 +350,87 @@ namespace PaavoInsurances
         {
             this.Frame.Navigate(typeof(MainPage));
         }
+
+        private void HouseToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            ApartmentToggleButton.IsChecked = false;
+            RowHouseToggleButton.IsChecked = false;
+            PairHouseToggleButton.IsChecked = false;
+            SummerHouseToggleButton.IsChecked = false;
+            SaunaToggleButton.IsChecked = false;
+        }
+
+        private void ApartmentToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            HouseToggleButton.IsChecked = false;
+            RowHouseToggleButton.IsChecked = false;
+            PairHouseToggleButton.IsChecked = false;
+            SummerHouseToggleButton.IsChecked = false;
+            SaunaToggleButton.IsChecked = false;
+        }
+
+        private void RowHouseToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            HouseToggleButton.IsChecked = false;
+            ApartmentToggleButton.IsChecked = false;
+            PairHouseToggleButton.IsChecked = false;
+            SummerHouseToggleButton.IsChecked = false;
+            SaunaToggleButton.IsChecked = false;
+        }
+
+        private void PairHouseToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            HouseToggleButton.IsChecked = false;
+            ApartmentToggleButton.IsChecked = false;
+            RowHouseToggleButton.IsChecked = false;
+            SummerHouseToggleButton.IsChecked = false;
+            SaunaToggleButton.IsChecked = false;
+        }
+
+        private void SummerHouseToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            HouseToggleButton.IsChecked = false;
+            ApartmentToggleButton.IsChecked = false;
+            RowHouseToggleButton.IsChecked = false;
+            PairHouseToggleButton.IsChecked = false;
+            SaunaToggleButton.IsChecked = false;
+        }
+
+        private void SaunaToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            HouseToggleButton.IsChecked = false;
+            ApartmentToggleButton.IsChecked = false;
+            RowHouseToggleButton.IsChecked = false;
+            PairHouseToggleButton.IsChecked = false;
+            SummerHouseToggleButton.IsChecked = false;
+        }
+
+        private void MonthToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            YearToggleButton.IsChecked = false;
+            QuarterToggleButton.IsChecked = false;
+        }
+
+        private void QuarterToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            YearToggleButton.IsChecked = false;
+            MonthToggleButton.IsChecked = false;
+        }
+
+        private void YearToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            QuarterToggleButton.IsChecked = false;
+            MonthToggleButton.IsChecked = false;
+        }
+
+        private void EuroToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            DollarToggleButton.IsChecked = false;
+        }
+
+        private void DollarToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            EuroToggleButton.IsChecked = false;
+        }
     }
 }
