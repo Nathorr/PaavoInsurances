@@ -11,9 +11,9 @@
 
 		<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="768" Width="1366">
 			<Image Source="Assets/images/background.png" Stretch="Fill"/>
-			<TextBox x:Name="ContactNameTextBox" HorizontalAlignment="Left" Margin="275,226,0,0" TextWrapping="Wrap" PlaceholderText="Name" VerticalAlignment="Top" Width="241" FontFamily="Merriweather Sans" FontWeight="Bold" FontSize="16" Foreground="#FF1BA0D4"/>
-			<TextBox x:Name="ContactEmailTextBox" HorizontalAlignment="Left" Margin="275,330,0,0" TextWrapping="Wrap" PlaceholderText="Email" VerticalAlignment="Top" Height="35" Width="241" FontFamily="Merriweather Sans" FontWeight="Bold" FontSize="16" Foreground="#FF1BA0D4"/>
-			<TextBox x:Name="ContactPhoneTextBox" HorizontalAlignment="Left" Margin="275,427,0,0" TextWrapping="Wrap" PlaceholderText="Phone" VerticalAlignment="Top" Height="29" Width="241" FontFamily="Merriweather Sans" FontWeight="Bold" FontSize="16" Foreground="#FF1BA0D4"/>
+			<TextBox x:Name="ContactNameTextBox" HorizontalAlignment="Left" Margin="275,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" FontFamily="Merriweather Sans" FontWeight="Bold" FontSize="24" Foreground="#FF1BA0D4" Height="45"/>
+			<TextBox x:Name="ContactEmailTextBox" HorizontalAlignment="Left" Margin="275,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="45" Width="241" FontFamily="Merriweather Sans" FontWeight="Bold" FontSize="24" Foreground="#FF1BA0D4"/>
+			<TextBox x:Name="ContactPhoneTextBox" HorizontalAlignment="Left" Margin="275,427,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="45" Width="241" FontFamily="Merriweather Sans" FontWeight="Bold" FontSize="24" Foreground="#FF1BA0D4"/>
 			<ToggleButton x:Name="HomeToggleButton" HorizontalAlignment="Left" Margin="615,238,0,0" VerticalAlignment="Top" Height="130" Width="130" BorderThickness="0" Padding="0">
 				<Image Source="Assets/images/home.png" Stretch="Fill" Margin="4"/>
 			</ToggleButton>

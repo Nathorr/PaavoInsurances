@@ -17,30 +17,35 @@
 			<Button x:Name="ArrowForwardButton" HorizontalAlignment="Left" Margin="1189,631,0,0" VerticalAlignment="Top" Height="95" Width="95" BorderThickness="0" Padding="0">
 				<Image Source="Assets/images/yes.png" Stretch="Fill" Height="88" Width="88"/>
 			</Button>
-			<TextBox x:Name="OldCustomerLastNameTextBox" HorizontalAlignment="Left" Margin="272,318,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" FontFamily="Merriweather Sans" FontWeight="Bold" FontSize="16" Foreground="#FF1BA0D4"/>
-			<TextBox x:Name="OldCustomerFirstNameTextBox" HorizontalAlignment="Left"  Margin="272,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" FontFamily="Merriweather Sans" FontWeight="Bold" FontSize="16" Foreground="#FF1BA0D4"/>
-			<TextBox x:Name="OldCustomerAreaTextBox" HorizontalAlignment="Left" Margin="528,409,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" FontFamily="Merriweather Sans" FontWeight="Bold" FontSize="16" Foreground="#FF1BA0D4"/>
-			<TextBox x:Name="OldCustomerBuildYearTextBox" HorizontalAlignment="Left" Margin="528,318,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" FontFamily="Merriweather Sans" FontWeight="Bold" FontSize="16" Foreground="#FF1BA0D4"/>
-			<TextBox x:Name="OldCustomerHouseTypeTextBox" HorizontalAlignment="Left" Margin="528,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" FontFamily="Merriweather Sans" FontWeight="Bold" FontSize="16" Foreground="#FF1BA0D4"/>
-			<TextBox x:Name="OldCustomerAddressTextBox" HorizontalAlignment="Left" Margin="272,414,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" FontFamily="Merriweather Sans" FontWeight="Bold" FontSize="16" Foreground="#FF1BA0D4"/>
+			<TextBox x:Name="OldCustomerLastNameTextBox" HorizontalAlignment="Left" Margin="272,318,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" FontFamily="Merriweather Sans" FontWeight="Bold" FontSize="24" Foreground="#FF1BA0D4" Height="45"/>
+			<TextBox x:Name="OldCustomerFirstNameTextBox" HorizontalAlignment="Left"  Margin="272,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" FontFamily="Merriweather Sans" FontWeight="Bold" FontSize="24" Foreground="#FF1BA0D4" Height="45"/>
+			<TextBox x:Name="OldCustomerAreaTextBox" HorizontalAlignment="Left" Margin="528,409,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" FontFamily="Merriweather Sans" FontWeight="Bold" FontSize="24" Foreground="#FF1BA0D4" Height="45"/>
+			<TextBox x:Name="OldCustomerBuildYearTextBox" HorizontalAlignment="Left" Margin="528,318,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" FontFamily="Merriweather Sans" FontWeight="Bold" FontSize="24" Foreground="#FF1BA0D4" Height="45"/>
+			<TextBox x:Name="OldCustomerHouseTypeTextBox" HorizontalAlignment="Left" Margin="528,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" FontFamily="Merriweather Sans" FontWeight="Bold" FontSize="24" Foreground="#FF1BA0D4" Height="45"/>
+			<TextBox x:Name="OldCustomerAddressTextBox" HorizontalAlignment="Left" Margin="272,414,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" FontFamily="Merriweather Sans" FontWeight="Bold" FontSize="24" Foreground="#FF1BA0D4" Height="45"/>
 			<TextBlock x:Name="OldCustomerFirstNameTextBlock" HorizontalAlignment="Left" Margin="272,186,0,0" TextWrapping="Wrap" Text="First name" VerticalAlignment="Top" FontSize="32" FontFamily="Merriweather Sans" FontWeight="Bold"/>
 			<TextBlock x:Name="OldCustomerAreaTextBlock" HorizontalAlignment="Left" Margin="528,369,0,0" TextWrapping="Wrap" Text="Area" VerticalAlignment="Top" FontSize="32" FontFamily="Merriweather Sans" FontWeight="Bold"/>
 			<TextBlock x:Name="OldCustomerBuildYearTextBlock" HorizontalAlignment="Left" Margin="528,275,0,0" TextWrapping="Wrap" Text="Build year" VerticalAlignment="Top" FontSize="32" FontFamily="Merriweather Sans" FontWeight="Bold"/>
 			<TextBlock x:Name="OldCustomerHouseTypeTextBlock" HorizontalAlignment="Left" Margin="528,186,0,0" TextWrapping="Wrap" Text="House type" VerticalAlignment="Top" FontSize="32" FontFamily="Merriweather Sans" FontWeight="Bold"/>
 			<TextBlock x:Name="OldCustomerAddressTextBlock" HorizontalAlignment="Left" Margin="272,369,0,0" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top" FontSize="32" FontFamily="Merriweather Sans" FontWeight="Bold"/>
 			<TextBlock x:Name="OldCustomerLastNameTextBlock" HorizontalAlignment="Left" Margin="272,275,0,0" TextWrapping="Wrap" Text="Last name" VerticalAlignment="Top" FontSize="32" FontFamily="Merriweather Sans" FontWeight="Bold"/>
-			<TextBox x:Name="OldCustomerPostalCodeTextBox" HorizontalAlignment="Left" Margin="272,508,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" FontFamily="Merriweather Sans" FontWeight="Bold" FontSize="16" Foreground="#FF1BA0D4"/>
+			<TextBox x:Name="OldCustomerPostalCodeTextBox" HorizontalAlignment="Left" Margin="272,508,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" FontFamily="Merriweather Sans" FontWeight="Bold" FontSize="24" Foreground="#FF1BA0D4" Height="45"/>
 			<TextBlock x:Name="OldCustomerPostalCodeTextBlock" HorizontalAlignment="Left" Margin="272,463,0,0" TextWrapping="Wrap" Text="Postal code" VerticalAlignment="Top" FontSize="32" FontFamily="Merriweather Sans" FontWeight="Bold"/>
-			<TextBox x:Name="OldCustomerPriceBox" HorizontalAlignment="Left" Margin="528,508,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" FontFamily="Merriweather Sans" FontWeight="Bold" FontSize="16" Foreground="#FF1BA0D4"/>
+			<TextBox x:Name="OldCustomerPriceBox" HorizontalAlignment="Left" Margin="528,508,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" FontFamily="Merriweather Sans" FontWeight="Bold" FontSize="24" Foreground="#FF1BA0D4" Height="45"/>
 			<TextBlock x:Name="OldCustomerPriceTextBlock" HorizontalAlignment="Left" Margin="528,463,0,0" TextWrapping="Wrap" Text="Price" VerticalAlignment="Top" FontSize="32" FontFamily="Merriweather Sans" FontWeight="Bold"/>
-			<Button x:Name="OldCustomerScanMeButton" HorizontalAlignment="Left" Height="83" Margin="798,460,0,0" VerticalAlignment="Top" Width="314" BorderThickness="0" Padding="0" Click="OldCustomerScanMeButton_Click">
+			<Button x:Name="OldCustomerScanMeButton" HorizontalAlignment="Left" Height="83" Margin="798,473,0,0" VerticalAlignment="Top" Width="314" BorderThickness="0" Padding="0" Click="OldCustomerScanMeButton_Click">
 				<Image Height="78" Source="Assets/images/bonus2.png" Stretch="Fill" Width="304"/>
 			</Button>
 			<Button x:Name="OldCustomerOrderMeButton" HorizontalAlignment="Left" Height="170" Margin="798,183,0,0" VerticalAlignment="Top" Width="170" BorderThickness="0" Padding="0">
 				<Image Source="Assets/images/offerme.png" Stretch="Fill"/>
 			</Button>
-			<TextBox x:Name="OldCustomerBonusCard" HorizontalAlignment="Left" Margin="801,414,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" FontFamily="Merriweather Sans" FontSize="16" FontWeight="Bold"/>
+			<TextBox x:Name="OldCustomerBonusCard" HorizontalAlignment="Left" Margin="801,414,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" FontFamily="Merriweather Sans" FontSize="24" FontWeight="Bold" Height="45"/>
 			<TextBlock x:Name="OldCustomerBonusTextBlock" HorizontalAlignment="Left" Margin="801,369,0,0" TextWrapping="Wrap" Text="Bonus card" VerticalAlignment="Top" FontSize="32" FontFamily="Merriweather Sans" FontWeight="Bold" Width="229"/>
+			<Image Margin="998,134,58,490" Source="Assets/images/logosmall.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
+				<Image.RenderTransform>
+					<CompositeTransform Rotation="12.247"/>
+				</Image.RenderTransform>
+			</Image>
 
 		</Grid>
 	</Viewbox>

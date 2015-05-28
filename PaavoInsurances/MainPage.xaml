@@ -29,16 +29,16 @@
             <Image Source="Assets/images/background.png" Stretch="Fill"/>
 
 
-            <Button x:Name="MainOfferMeButton" HorizontalAlignment="Left" Height="291" Margin="159,277,0,0" VerticalAlignment="Top" Width="309" BorderThickness="0" Click="MainOfferMeButton_Click">
-                <Image Height="245" Source="Assets/images/offerme.png" Stretch="Fill" Width="245"/>
+            <Button x:Name="MainOfferMeButton" HorizontalAlignment="Left" Height="245" Margin="250,277,0,0" VerticalAlignment="Top" Width="245" BorderThickness="0" Click="MainOfferMeButton_Click" Padding="0">
+                <Image Source="Assets/images/offerme.png" Stretch="Fill"/>
             </Button>
-            <Button x:Name="MainCallMeButton" HorizontalAlignment="Left" Height="291" Margin="531,277,0,0" VerticalAlignment="Top" Width="309" BorderThickness="0" Click="Button_Click">
-                <Image Height="245" Source="Assets/images/callme.png" Stretch="Fill" Width="245"/>
+            <Button x:Name="MainCallMeButton" HorizontalAlignment="Left" Height="245" Margin="561,277,0,0" VerticalAlignment="Top" Width="245" BorderThickness="0" Click="Button_Click" Padding="0">
+                <Image Source="Assets/images/callme.png" Stretch="Fill"/>
             </Button>
-            <Button x:Name="MainScanMeButton" HorizontalAlignment="Left" Height="291" Margin="899,277,0,0" VerticalAlignment="Top" Width="309"  BorderThickness="0" Click="MainScanMeButton_Click">
-                <Image  Height="245" Source="Assets/images/scanme.png" Stretch="Fill"  Width="245"/>
+            <Button x:Name="MainScanMeButton" HorizontalAlignment="Stretch" Height="245" Margin="871,277,250,0" VerticalAlignment="Top"  BorderThickness="0" Click="MainScanMeButton_Click" Padding="0">
+                <Image Source="Assets/images/scanme.png" Stretch="Fill"/>
             </Button>
-            <Image Margin="188,124,301,532" Source="Assets/images/logobig.png" Stretch="Fill"/>
+            <Image Margin="188,113,301,543" Source="Assets/images/logobig.png" Stretch="Fill"/>
         </Grid>
     </Viewbox>
 </Page>
