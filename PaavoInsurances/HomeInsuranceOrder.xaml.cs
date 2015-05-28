@@ -248,6 +248,7 @@ namespace PaavoInsurances
 
         private async void ConfirmationYesButton_Click(object sender, RoutedEventArgs e)
         {
+
             SQLiteAsyncConnection conn = new SQLiteAsyncConnection("ClientTable");
             var query = conn.Table<ClientTable>().Where(x => x.securityId == cameraClass.socialSecurityId);
             var queryResult = await query.ToListAsync();
@@ -303,6 +304,9 @@ namespace PaavoInsurances
 
         private void ArrowForwardButton_Click(object sender, RoutedEventArgs e)
         {
+
+            if (string.IsNullOrWhiteSpace(OrderFirstNameTextBox.Text) || string.IsNullOrWhiteSpace(OrderLastNameTextBox.Text))
+                return;
             // Tähän voi valmistella tallennusta tietokantoihin, esim. luokkiin sitomiset
             ConfirmPopup.IsOpen = true;
         }
