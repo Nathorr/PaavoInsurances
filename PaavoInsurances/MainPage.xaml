@@ -21,23 +21,24 @@
         </Style>
     </Page.Resources>
 
-    <Grid Background="#FF02AFFF">
-        <Image Margin="0,0,1,0" Source="Assets/images/background.png" Stretch="Fill"/>
-        <Button Content="Price" HorizontalAlignment="Left" Margin="587,1101,0,-371" VerticalAlignment="Top" Click="Button_Click"/>
-        
+    <Viewbox HorizontalAlignment="Center" VerticalAlignment="Center">
 
-        <Button Content="Price" HorizontalAlignment="Left" Margin="407,1091,0,-361" VerticalAlignment="Top" />
+		<Grid Background="#FF02AFFF" Height="768" Width="1366">
 
 
-        <Button x:Name="MainOfferMeButton" HorizontalAlignment="Left" Height="291" Margin="159,277,0,0" VerticalAlignment="Top" Width="309" BorderThickness="0" Click="MainOfferMeButton_Click">
-        	<Image Height="245" Source="Assets/images/offerme.png" Stretch="Fill" Width="245"/>
-        </Button>
-        <Button x:Name="MainCallMeButton" HorizontalAlignment="Left" Height="291" Margin="531,277,0,0" VerticalAlignment="Top" Width="309" BorderThickness="0" Click="Button_Click">
-        	<Image Height="245" Source="Assets/images/callme.png" Stretch="Fill" Width="245"/>
-        </Button>
-        <Button x:Name="MainScanMeButton" HorizontalAlignment="Left" Height="291" Margin="899,277,0,0" VerticalAlignment="Top" Width="309"  BorderThickness="0" Click="MainScanMeButton_Click">
-            <Image  Height="245" Source="Assets/images/scanme.png" Stretch="Fill"  Width="245"/>
-        </Button>
-        <Image Margin="188,124,411,546" Source="Assets/images/logobig.png" Stretch="Fill" Width="767" Height="98"/>
-    </Grid>
+			<Image Source="Assets/images/background.png" Stretch="Fill"/>
+
+
+			<Button x:Name="MainOfferMeButton" HorizontalAlignment="Left" Height="291" Margin="159,277,0,0" VerticalAlignment="Top" Width="309" BorderThickness="0" Click="MainOfferMeButton_Click">
+				<Image Height="245" Source="Assets/images/offerme.png" Stretch="Fill" Width="245"/>
+			</Button>
+			<Button x:Name="MainCallMeButton" HorizontalAlignment="Left" Height="291" Margin="531,277,0,0" VerticalAlignment="Top" Width="309" BorderThickness="0" Click="Button_Click">
+				<Image Height="245" Source="Assets/images/callme.png" Stretch="Fill" Width="245"/>
+			</Button>
+			<Button x:Name="MainScanMeButton" HorizontalAlignment="Left" Height="291" Margin="899,277,0,0" VerticalAlignment="Top" Width="309"  BorderThickness="0" Click="MainScanMeButton_Click">
+				<Image  Height="245" Source="Assets/images/scanme.png" Stretch="Fill"  Width="245"/>
+			</Button>
+			<Image Margin="188,124,411,546" Source="Assets/images/logobig.png" Stretch="Fill" Width="767" Height="98"/>
+		</Grid>
+	</Viewbox>
 </Page>

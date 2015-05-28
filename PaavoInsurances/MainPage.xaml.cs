@@ -49,7 +49,9 @@ namespace PaavoInsurances
         private async void CreateDatabase()
         {
             SQLiteAsyncConnection conn2 = new SQLiteAsyncConnection("SpamTable");
+            SQLiteAsyncConnection conn3 = new SQLiteAsyncConnection("ClientTable");
             await conn2.CreateTableAsync<SpamTable>();
+            await conn3.CreateTableAsync<ClientTable>();
         }
     }
 }
