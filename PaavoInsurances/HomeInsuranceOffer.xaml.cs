@@ -440,5 +440,7 @@ namespace PaavoInsurances
         {
             EuroToggleButton.IsChecked = false;
         }
+
+        
     }
 }

@@ -17,8 +17,8 @@
 			<Button x:Name="ArrowForwardButton" HorizontalAlignment="Left" Margin="1189,631,0,0" VerticalAlignment="Top" Height="95" Width="95" BorderThickness="0" Padding="0" Click="ArrowForwardButton_Click">
 				<Image Source="Assets/images/arrowforward.png" Stretch="Fill" Height="88" Width="88"/>
 			</Button>
-			<TextBox x:Name="OrderFirstNameTextBox" HorizontalAlignment="Left" Margin="272,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
-			<TextBox x:Name="OrderLastNameTextBox" HorizontalAlignment="Left" Margin="272,304,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
+			<TextBox Name="OrderFirstNameTextBox" HorizontalAlignment="Left" Margin="272,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
+			<TextBox Name="OrderLastNameTextBox" HorizontalAlignment="Left" Margin="272,304,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
 			<TextBox x:Name="OrderIDTextBox" HorizontalAlignment="Left" Margin="272,412,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
 			<TextBox x:Name="OrderPriceTextBox" HorizontalAlignment="Left" Margin="588,412,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168"/>
 			<TextBox x:Name="OrderBonusCardTextBox" HorizontalAlignment="Left" Margin="588,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168"/>

@@ -43,9 +43,12 @@ namespace PaavoInsurances
             //OrderFirstNameTextBox.Text = cameraClass.homeInsuranceClass.name;
             //OrderLastNameTextBox.Text = cameraClass.homeInsuranceClass.surName;
             OrderIDTextBox.Text = cameraClass.socialSecurityId;
+            GetUserFromSqlite(cameraClass);
             if(cameraClass.bonusCard != null)
                 OrderBonusCardTextBox.Text = cameraClass.bonusCard;
+            
             OrderPriceTextBox.Text = cameraClass.homeInsuranceClass.pricingParameters.price.price;
+            
         }
 
         public class HomeInsuranceClass
@@ -54,6 +57,7 @@ namespace PaavoInsurances
             public string name { get; set; }
             public string surName { get; set; }
             public string validTo { get; set; }
+            public string id { get; set; }
             
         }
 
@@ -110,7 +114,58 @@ namespace PaavoInsurances
 
             await conn.InsertAsync(client);
         }
+        async private void GetUserFromSqlite(ScannedOldCustomerInfo.CameraClass cameraClass)
+        {
+            Debug.WriteLine(cameraClass.socialSecurityId);
+            SQLiteAsyncConnection conn = new SQLiteAsyncConnection("ClientTable");
+            var query = conn.Table<ClientTable>().Where(x => x.securityId == cameraClass.socialSecurityId);
+            var result = await query.ToListAsync();
+            foreach (var item in result)
+            {
+                if (item.bonusCardNumber != null)
+                {
+                    OrderBonusCardTextBox.Text = item.bonusCardNumber;
+                    ScanMeButton.Visibility = Visibility.Collapsed;
 
+                }
+                getJson(item.Id);
+            }
+        }
+        public async void getJson(string insuranceId)
+        {
+            
+            string RequestUrl = "http://185.20.136.51/sellertool/applications/";
+
+            HttpClient clientOb = new HttpClient();
+            string plain = "LUT" + ":" + "0gmsl48hgi_jhfiud76";
+            string authString = System.Convert.ToBase64String(Encoding.UTF8.GetBytes(plain));
+            clientOb.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", authString);
+            clientOb.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+            HttpResponseMessage response = await clientOb.GetAsync(RequestUrl);
+            Debug.WriteLine(response);
+            using (HttpContent content = response.Content)
+            {
+                var result = await content.ReadAsStringAsync();
+                Debug.WriteLine(result);
+                List<HomeInsuranceClass> deSer = JsonConvert.DeserializeObject<List<HomeInsuranceClass>>(result);
+                for (int i = 0; i < deSer.Count; i++)
+                {
+                    Debug.WriteLine("Eri id:t : " + deSer[i].id);
+                    Debug.WriteLine("Täs lorpon hetulla vakuutusID: " + insuranceId);
+                    if (deSer[i].id == insuranceId)
+                    {
+                        OrderFirstNameTextBox.Text = deSer[i].name;
+                        OrderLastNameTextBox.Text = deSer[i].surName;
+                        
+                    }
+                    else
+                    {
+                        Debug.WriteLine("Nothing found!!!!");
+                    }
+
+                }
+            }
+        }
         async private void Button_Click(object sender, RoutedEventArgs e)
         {
             /*homeInsurance.name = "asdasd";
@@ -185,7 +240,8 @@ namespace PaavoInsurances
                 //ID joka yhistetään tauluun henkkaritunnuksen kanssa.
                 var result = await content.ReadAsStringAsync();
                 ReturnId deSer = JsonConvert.DeserializeObject<ReturnId>(result);
-                InsertId(deSer.id, cameraClass.socialSecurityId);
+                //InsertId(deSer.id, cameraClass.socialSecurityId);
+                insertBonusCard(cameraClass.bonusCard, deSer.id, cameraClass.socialSecurityId);
             }
             if (ConfirmPopup.IsOpen == true)
                 ConfirmPopup.IsOpen = false;
