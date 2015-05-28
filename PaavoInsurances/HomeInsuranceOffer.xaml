@@ -26,7 +26,7 @@
 			<Button x:Name="ArrowBackButton" HorizontalAlignment="Left" Height="109" Margin="40,64,0,0" VerticalAlignment="Top" Width="106" BorderThickness="0" Padding="0" Click="ArrowBackButton_Click" Style="{StaticResource BackbuttonStyle}" Grid.RowSpan="2">
 				<Image Source="Assets/images/arrowback.png" Stretch="Fill" Height="93" Width="93"/>
 			</Button>
-			<Button x:Name="ArrowForwardButton" HorizontalAlignment="Left" Margin="230.7,539.5,0,0" VerticalAlignment="Top" Height="95" Width="95" BorderThickness="0" Padding="0" Click="ArrowForwardButton_Click" Grid.Column="3" Grid.RowSpan="2" Grid.Row="1">
+			<Button x:Name="ArrowForwardButton" HorizontalAlignment="Left" Margin="339.7,534,0,0" VerticalAlignment="Top" Height="95" Width="95" BorderThickness="0" Padding="0" Click="ArrowForwardButton_Click" Grid.Column="3" Grid.RowSpan="2" Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource BackbuttonStyle}">
 				<Image Source="Assets/images/arrowforward.png" Stretch="Fill" Height="88" Width="88"/>
 			</Button>
 			<ToggleButton x:Name="HouseToggleButton" Click="HouseToggleButton_Click" HorizontalAlignment="Left" Margin="34.9,82,0,0" VerticalAlignment="Top" Height="130" Width="130" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}" Grid.Column="1" Grid.Row="1">
