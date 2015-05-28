@@ -40,6 +40,9 @@ namespace PaavoInsurances
         {
             public HomeInsuranceClass homeInsuranceClass = new HomeInsuranceClass();
             public string previousPage { get; set; }
+            public string bonusCard { get; set; }
+            public string socialSecurityId { get; set; }
+
 
         }
         public class HomeInsuranceClass
@@ -49,7 +52,7 @@ namespace PaavoInsurances
             public string name { get; set; }
             public string surName { get; set; }
             public string validTo { get; set; }
-            public string bonusCard { get; set; }
+            
 
         }
         public class PricingParameters
@@ -305,26 +308,30 @@ namespace PaavoInsurances
                 QuarterToggleButton.IsChecked = false;
                 YearToggleButton.IsChecked = false;
                 cameraClass.homeInsuranceClass.pricingParameters.price.billingPeriod = "MONTH";
+                cameraClass.homeInsuranceClass.pricingParameters.billingPeriod = "MONTH";
                 
             }
             if (QuarterToggleButton.IsChecked == true)
             {
                 MonthToggleButton.IsChecked = false;
                 YearToggleButton.IsChecked = false;
-                cameraClass.homeInsuranceClass.pricingParameters.price.billingPeriod = "YEAR";
+                cameraClass.homeInsuranceClass.pricingParameters.price.billingPeriod = "QUARTER";
+                cameraClass.homeInsuranceClass.pricingParameters.billingPeriod = "QUARTER";
                 
             }
             if (YearToggleButton.IsChecked == true)
             {
                 MonthToggleButton.IsChecked = false;
                 QuarterToggleButton.IsChecked = false;
-                cameraClass.homeInsuranceClass.pricingParameters.price.billingPeriod = "QUARTER";
+                cameraClass.homeInsuranceClass.pricingParameters.price.billingPeriod = "YEAR";
+                cameraClass.homeInsuranceClass.pricingParameters.billingPeriod = "YEAR";
                 
             }
             if (EuroToggleButton.IsChecked == true)
             {
                 DollarToggleButton.IsChecked = false;
                 cameraClass.homeInsuranceClass.pricingParameters.price.currency = "EUR";
+                cameraClass.homeInsuranceClass.pricingParameters.currency = "EUR";
               
             }
 
@@ -332,6 +339,7 @@ namespace PaavoInsurances
             {
                 EuroToggleButton.IsChecked = false;
                 cameraClass.homeInsuranceClass.pricingParameters.price.currency = "USD";
+                cameraClass.homeInsuranceClass.pricingParameters.currency = "USD";
             }
 
             cameraClass.homeInsuranceClass.pricingParameters.area = OfferAreaTextBox.Text;

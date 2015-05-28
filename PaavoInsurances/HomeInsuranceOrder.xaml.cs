@@ -42,9 +42,9 @@ namespace PaavoInsurances
             cameraClass = (ScannedOldCustomerInfo.CameraClass)e.Parameter;
             //OrderFirstNameTextBox.Text = cameraClass.homeInsuranceClass.name;
             //OrderLastNameTextBox.Text = cameraClass.homeInsuranceClass.surName;
-            OrderIDTextBox.Text = cameraClass.homeInsuranceClass.id;
-            if(cameraClass.homeInsuranceClass.bonusCard != null)
-                OrderBonusCardTextBox.Text = cameraClass.homeInsuranceClass.bonusCard;
+            OrderIDTextBox.Text = cameraClass.socialSecurityId;
+            if(cameraClass.bonusCard != null)
+                OrderBonusCardTextBox.Text = cameraClass.bonusCard;
             OrderPriceTextBox.Text = cameraClass.homeInsuranceClass.pricingParameters.price.price;
         }
 
@@ -56,6 +56,7 @@ namespace PaavoInsurances
             public string validTo { get; set; }
             
         }
+
         public class PricingParameters
         {
             public InsurancePrice price = new InsurancePrice();
@@ -69,17 +70,19 @@ namespace PaavoInsurances
             public string billingPeriod { get; set; }
            
         }
+
         public class InsurancePrice
         {
             public string price { get; set; }
             public string currency { get; set; }
             public string billingPeriod { get; set; }
         }
+
         public class ReturnId
         {
             public string id { get; set; }
         }
-        public HomeInsuranceClass homeInsurance = new HomeInsuranceClass();
+        //public HomeInsuranceClass homeInsurance = new HomeInsuranceClass();
        
         async private void InsertId(string id, string scanId)
         {
@@ -109,10 +112,10 @@ namespace PaavoInsurances
             homeInsurance.pricingParameters.billingPeriod = "YEAR";
             homeInsurance.pricingParameters.price.price = "280";
             homeInsurance.pricingParameters.price.currency = "EUR";
-            homeInsurance.pricingParameters.price.billingPeriod = "YEAR";*/
+            homeInsurance.pricingParameters.price.billingPeriod = "YEAR";
             
-            string sr_string = JsonConvert.SerializeObject(this.homeInsurance, Formatting.Indented);
-            Debug.WriteLine("Post: " +sr_string);
+            //string sr_string = JsonConvert.SerializeObject(homeInsurance, Formatting.Indented);
+            //Debug.WriteLine("Post: " +sr_string);
 
             string RequestUrl = "http://185.20.136.51/sellertool/applications/";
 
@@ -127,8 +130,9 @@ namespace PaavoInsurances
             {
                 //ID joka yhistetään tauluun henkkaritunnuksen kanssa.
                 var result = await content.ReadAsStringAsync();
+                Debug.WriteLine(result);
                 InsertId(result, "asdasda");
-            }
+            }*/
 
         }
 
@@ -143,9 +147,32 @@ namespace PaavoInsurances
             this.Frame.Navigate(typeof(HomeInsuranceOffer));
         }
 
-        private void ConfirmationYesButton_Click(object sender, RoutedEventArgs e)
+        private async void ConfirmationYesButton_Click(object sender, RoutedEventArgs e)
         {
-            // Tähän Otson ja meidän tietokantaan tallennus
+
+            cameraClass.homeInsuranceClass.name = OrderFirstNameTextBox.Text;
+            cameraClass.homeInsuranceClass.surName = OrderLastNameTextBox.Text;
+            cameraClass.homeInsuranceClass.validTo = OrderValidToDatePicker.Date.Day.ToString() + "." + OrderValidToDatePicker.Date.Month.ToString() + "." + OrderValidToDatePicker.Date.Year.ToString();
+
+            string sr_string = JsonConvert.SerializeObject(cameraClass.homeInsuranceClass, Formatting.Indented);
+            Debug.WriteLine("Post: " + sr_string);
+
+            string RequestUrl = "http://185.20.136.51/sellertool/applications/";
+
+            HttpClient clientOb = new HttpClient();
+            string plain = "LUT" + ":" + "0gmsl48hgi_jhfiud76";
+            string authString = System.Convert.ToBase64String(Encoding.UTF8.GetBytes(plain));
+            clientOb.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", authString);
+            clientOb.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+            HttpResponseMessage response = await clientOb.PostAsync(RequestUrl, new StringContent(sr_string, Encoding.UTF8, "application/json"));
+            Debug.WriteLine(response);
+            using (HttpContent content = response.Content)
+            {
+                //ID joka yhistetään tauluun henkkaritunnuksen kanssa.
+                var result = await content.ReadAsStringAsync();
+                Debug.WriteLine(result);
+                InsertId(result, "asdasda");
+            }
         }
 
         private void ConfirmationNoButton_Click(object sender, RoutedEventArgs e)

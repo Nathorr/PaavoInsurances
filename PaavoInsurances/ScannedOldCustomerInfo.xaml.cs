@@ -53,14 +53,14 @@ namespace PaavoInsurances
             {
                 getJson(item.Id);
             }
-
         }
         
         public class CameraClass
         {
             public HomeInsuranceClass homeInsuranceClass = new HomeInsuranceClass();
             public string previousPage { get; set; }
-
+            public string bonusCard { get; set; }
+            public string socialSecurityId { get; set; }
         }
 
         public class HomeInsuranceClass
@@ -70,7 +70,7 @@ namespace PaavoInsurances
             public string name { get; set; }
             public string surName { get; set; }
             public string validTo { get; set; }
-            public string bonusCard { get; set; }
+            
 
         }
         public class PricingParameters
