@@ -42,7 +42,7 @@ namespace PaavoInsurances
             cameraClass = (CameraClass)e.Parameter;
 
             GetUserFromSqlite(cameraClass);
-            //FetchData();
+            FetchData();
 
         }
         async private void GetUserFromSqlite(CameraClass cameraClass)

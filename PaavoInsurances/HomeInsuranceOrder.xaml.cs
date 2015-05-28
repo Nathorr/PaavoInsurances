@@ -19,6 +19,7 @@ using System.Text;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using SQLite;
+using System.Collections;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -29,6 +30,7 @@ namespace PaavoInsurances
     /// </summary>
     public sealed partial class HomeInsuranceOrder : Page
     {
+       
         public ScannedOldCustomerInfo.CameraClass cameraClass;
 
         public HomeInsuranceOrder()
@@ -104,15 +106,40 @@ namespace PaavoInsurances
         async private void insertBonusCard(string bonusCard, string id, string scanId, ScannedOldCustomerInfo.CameraClass cameraClass)
         {
             SQLiteAsyncConnection conn = new SQLiteAsyncConnection("ClientTable");
-            ClientTable client = new ClientTable
+            var query = conn.Table<ClientTable>().Where(x => x.securityId == cameraClass.socialSecurityId);
+            var result = await query.ToListAsync();
+            foreach (var item in result)
             {
-                Id = id,
-                bonusCardNumber = bonusCard,
-                securityId = scanId,
-            };
-            await conn.InsertAsync(client);
+                Debug.WriteLine("Item.id : ´"+id);
+                cameraClass.homeInsuranceClass.id = id;
+                Debug.WriteLine("cameraClass id: "+id);
+                Debug.WriteLine("SAMA VITUN HETU!");
+            }
+            if(result.Count < 1)    
+            {
+                Debug.WriteLine("Testiprinttii: "+id + " " + bonusCard + " " + scanId);
+                ClientTable client = new ClientTable
+                {
+                    Id = id,
+                    bonusCardNumber = bonusCard,
+                    securityId = scanId,
+                };
+                await conn.InsertAsync(client);
+            }
+                
+            
+           
+            
 
         }
+
+        /*private async void GetDataFromSqlite()
+        {
+            Debug.WriteLine(cameraClass.socialSecurityId);
+            SQLiteAsyncConnection conn = new SQLiteAsyncConnection("ClientTable");
+            
+        }*/
+
         async private void GetUserFromSqlite(ScannedOldCustomerInfo.CameraClass cameraClass)
         {
             Debug.WriteLine(cameraClass.socialSecurityId);
@@ -121,6 +148,10 @@ namespace PaavoInsurances
             var result = await query.ToListAsync();
             foreach (var item in result)
             {
+                /*if(item.securityId == cameraClass.socialSecurityId)
+                {
+
+                }*/
                 if (item.bonusCardNumber != null)
                 {
                     OrderBonusCardTextBox.Text = item.bonusCardNumber;
@@ -217,7 +248,17 @@ namespace PaavoInsurances
 
         private async void ConfirmationYesButton_Click(object sender, RoutedEventArgs e)
         {
-
+            SQLiteAsyncConnection conn = new SQLiteAsyncConnection("ClientTable");
+            var query = conn.Table<ClientTable>().Where(x => x.securityId == cameraClass.socialSecurityId);
+            var queryResult = await query.ToListAsync();
+            foreach (var item in queryResult)
+            {
+                Debug.WriteLine("Item.id : ´" + item.Id);
+                cameraClass.homeInsuranceClass.id = item.Id;
+                Debug.WriteLine("cameraClass id: " + item.Id);
+                Debug.WriteLine("SAMA VITUN HETU!");
+            }
+            Debug.WriteLine("ID funktiossa: "+cameraClass.homeInsuranceClass.id);
             cameraClass.homeInsuranceClass.name = OrderFirstNameTextBox.Text;
             cameraClass.homeInsuranceClass.surName = OrderLastNameTextBox.Text;
             cameraClass.homeInsuranceClass.validTo = OrderValidToDatePicker.Date.Day.ToString() + "." + OrderValidToDatePicker.Date.Month.ToString() + "." + OrderValidToDatePicker.Date.Year.ToString();
@@ -236,10 +277,15 @@ namespace PaavoInsurances
             Debug.WriteLine(response);
             using (HttpContent content = response.Content)
             {
+                Debug.WriteLine("Id tässä vaiheessa1: " + cameraClass.homeInsuranceClass.id);
                 //ID joka yhistetään tauluun henkkaritunnuksen kanssa.
                 var result = await content.ReadAsStringAsync();
+                Debug.WriteLine("Result palvelimelta: " + result);
+                
                 ReturnId deSer = JsonConvert.DeserializeObject<ReturnId>(result);
                 //InsertId(deSer.id, cameraClass.socialSecurityId);
+                Debug.WriteLine("Id tässä vaiheessa2: " + cameraClass.homeInsuranceClass.id);
+                Debug.WriteLine("Deser id: " + deSer.id);
                 insertBonusCard(cameraClass.bonusCard, deSer.id, cameraClass.socialSecurityId, cameraClass);
             }
             if (ConfirmPopup.IsOpen == true)
