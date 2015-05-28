@@ -101,18 +101,17 @@ namespace PaavoInsurances
             await conn.InsertAsync(client);
         }
 
-        async private void insertBonusCard(string bonusCard, string id, string scanId)
+        async private void insertBonusCard(string bonusCard, string id, string scanId, ScannedOldCustomerInfo.CameraClass cameraClass)
         {
             SQLiteAsyncConnection conn = new SQLiteAsyncConnection("ClientTable");
-
             ClientTable client = new ClientTable
             {
                 Id = id,
                 bonusCardNumber = bonusCard,
                 securityId = scanId,
             };
-
             await conn.InsertAsync(client);
+
         }
         async private void GetUserFromSqlite(ScannedOldCustomerInfo.CameraClass cameraClass)
         {
@@ -241,10 +240,13 @@ namespace PaavoInsurances
                 var result = await content.ReadAsStringAsync();
                 ReturnId deSer = JsonConvert.DeserializeObject<ReturnId>(result);
                 //InsertId(deSer.id, cameraClass.socialSecurityId);
-                insertBonusCard(cameraClass.bonusCard, deSer.id, cameraClass.socialSecurityId);
+                insertBonusCard(cameraClass.bonusCard, deSer.id, cameraClass.socialSecurityId, cameraClass);
             }
             if (ConfirmPopup.IsOpen == true)
+            {
                 ConfirmPopup.IsOpen = false;
+                //Frame.Navigate(typeof(MainPage));
+            }
         }
 
         private void ConfirmationNoButton_Click(object sender, RoutedEventArgs e)

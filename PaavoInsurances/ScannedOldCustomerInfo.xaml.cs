@@ -42,7 +42,7 @@ namespace PaavoInsurances
             cameraClass = (CameraClass)e.Parameter;
 
             GetUserFromSqlite(cameraClass);
-            FetchData();
+            //FetchData();
 
         }
         async private void GetUserFromSqlite(CameraClass cameraClass)
@@ -53,6 +53,11 @@ namespace PaavoInsurances
             var result = await query.ToListAsync();
             foreach (var item in result)
             {
+                if (item.bonusCardNumber != null)
+                {
+                    OldCustomerBonusCard.Text = item.bonusCardNumber;
+                    OldCustomerScanMeButton.Visibility = Visibility.Collapsed;
+                }
                 getJson(item.Id);
             }
         }
@@ -145,6 +150,7 @@ namespace PaavoInsurances
                         OldCustomerBuildYearTextBox.Text = deSer[i].pricingParameters.buildYear;
                         OldCustomerAreaTextBox.Text = deSer[i].pricingParameters.area;
                         OldCustomerPriceBox.Text = deSer[i].pricingParameters.price.price + " " + deSer[i].pricingParameters.currency;
+                        
                     }
                     else
                     {
