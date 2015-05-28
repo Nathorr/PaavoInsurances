@@ -54,7 +54,7 @@
 											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="Border">
 												<DiscreteObjectKeyFrame KeyTime="0">
 													<DiscreteObjectKeyFrame.Value>
-														<SolidColorBrush Color="#FFF300FF"/>
+														<SolidColorBrush Color="#FFE4532B"/>
 													</DiscreteObjectKeyFrame.Value>
 												</DiscreteObjectKeyFrame>
 											</ObjectAnimationUsingKeyFrames>
@@ -71,7 +71,7 @@
 											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="Border">
 												<DiscreteObjectKeyFrame KeyTime="0">
 													<DiscreteObjectKeyFrame.Value>
-														<SolidColorBrush Color="#FFF300FF"/>
+														<SolidColorBrush Color="#FFE4532B"/>
 													</DiscreteObjectKeyFrame.Value>
 												</DiscreteObjectKeyFrame>
 											</ObjectAnimationUsingKeyFrames>
