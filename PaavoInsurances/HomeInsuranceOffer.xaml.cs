@@ -35,7 +35,7 @@ namespace PaavoInsurances
         {
             this.InitializeComponent();
         }
-        
+
         public class CameraClass
         {
             public HomeInsuranceClass homeInsuranceClass = new HomeInsuranceClass();
@@ -52,7 +52,7 @@ namespace PaavoInsurances
             public string name { get; set; }
             public string surName { get; set; }
             public string validTo { get; set; }
-            
+
 
         }
         public class PricingParameters
@@ -107,7 +107,7 @@ namespace PaavoInsurances
 
         public async void CalculatePrice()
         {
-            
+
 
             if (HouseToggleButton.IsChecked == true)
             {
@@ -226,8 +226,8 @@ namespace PaavoInsurances
                 ReturnedData deSer = JsonConvert.DeserializeObject<ReturnedData>(result);
                 OfferPriceResultTextBox.Text = deSer.price.price.ToString();
                 cameraClass.homeInsuranceClass.pricingParameters.price.price = deSer.price.price.ToString();
-                
-                
+
+
             }
         }
 
@@ -236,17 +236,17 @@ namespace PaavoInsurances
 
             CalculatePrice();
             //TÄHÄN SITTEN SE OTSON KANTAAN ÄNKEMINEN JOKA EI EES VITTU TUU TÄLLE SIVULLE LEL
-            
 
-            
+
+
         }
         private void ArrowForwardButton_Click(object sender, RoutedEventArgs e)
         {
             //Price price = new Price();
             //CameraClass cameraClass = new CameraClass();
-            
+
             CalculatePrice();
-            
+
             if (HouseToggleButton.IsChecked == true)
             {
                 ApartmentToggleButton.IsChecked = false;
@@ -309,7 +309,7 @@ namespace PaavoInsurances
                 YearToggleButton.IsChecked = false;
                 cameraClass.homeInsuranceClass.pricingParameters.price.billingPeriod = "MONTH";
                 cameraClass.homeInsuranceClass.pricingParameters.billingPeriod = "MONTH";
-                
+
             }
             if (QuarterToggleButton.IsChecked == true)
             {
@@ -317,7 +317,7 @@ namespace PaavoInsurances
                 YearToggleButton.IsChecked = false;
                 cameraClass.homeInsuranceClass.pricingParameters.price.billingPeriod = "QUARTER";
                 cameraClass.homeInsuranceClass.pricingParameters.billingPeriod = "QUARTER";
-                
+
             }
             if (YearToggleButton.IsChecked == true)
             {
@@ -325,14 +325,14 @@ namespace PaavoInsurances
                 QuarterToggleButton.IsChecked = false;
                 cameraClass.homeInsuranceClass.pricingParameters.price.billingPeriod = "YEAR";
                 cameraClass.homeInsuranceClass.pricingParameters.billingPeriod = "YEAR";
-                
+
             }
             if (EuroToggleButton.IsChecked == true)
             {
                 DollarToggleButton.IsChecked = false;
                 cameraClass.homeInsuranceClass.pricingParameters.price.currency = "EUR";
                 cameraClass.homeInsuranceClass.pricingParameters.currency = "EUR";
-              
+
             }
 
             if (DollarToggleButton.IsChecked == true)
@@ -344,14 +344,14 @@ namespace PaavoInsurances
 
             cameraClass.homeInsuranceClass.pricingParameters.area = OfferAreaTextBox.Text;
             cameraClass.homeInsuranceClass.pricingParameters.buildYear = OfferBuildYearTextBox.Text;
-            cameraClass.homeInsuranceClass.pricingParameters.address= OfferAddressTextBox.Text;
+            cameraClass.homeInsuranceClass.pricingParameters.address = OfferAddressTextBox.Text;
             cameraClass.homeInsuranceClass.pricingParameters.postalCode = OfferAddressTextBox.Text;
             cameraClass.homeInsuranceClass.pricingParameters.insuranceStartDate = OfferStartDatePicker.Date.Day.ToString() + "." + OfferStartDatePicker.Date.Month.ToString() + "." + OfferStartDatePicker.Date.Year.ToString();
             cameraClass.previousPage = "homeInsuranceOffer";
-            
+
             this.Frame.Navigate(typeof(CameraPage), cameraClass);
-            
-            
+
+
         }
 
         private void ArrowBackButton_Click(object sender, RoutedEventArgs e)
@@ -441,6 +441,24 @@ namespace PaavoInsurances
             EuroToggleButton.IsChecked = false;
         }
 
-        
+        private void buildYearKeyDown(object sender, KeyRoutedEventArgs e)
+        {
+            char key = Convert.ToChar(e.Key);
+
+            if (key < '0' || key > '9')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void postalCodeKeyDown(object sender, KeyRoutedEventArgs e)
+        {
+            char key = Convert.ToChar(e.Key);
+
+            if (key < '0' || key > '9')
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
