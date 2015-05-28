@@ -10,63 +10,76 @@
     <Viewbox HorizontalAlignment="Left" VerticalAlignment="Top">
 
 		<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="768" Width="1366">
-			<Image Margin="0,0,1,0" Source="Assets/images/background.png" Stretch="Fill"/>
-			<Button x:Name="ArrowBackButton" HorizontalAlignment="Left" Height="109" Margin="80,72,0,0" VerticalAlignment="Top" Width="106" BorderThickness="0" Padding="0" Click="ArrowBackButton_Click" Style="{StaticResource BackbuttonStyle}">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="100"/>
+				<RowDefinition/>
+				<RowDefinition Height="100"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="150"/>
+				<ColumnDefinition Width="355"/>
+				<ColumnDefinition Width="355"/>
+				<ColumnDefinition Width="355.5"/>
+				<ColumnDefinition Width="150"/>
+			</Grid.ColumnDefinitions>
+			<Image Margin="0,0,1,0" Source="Assets/images/background.png" Stretch="Fill" Grid.ColumnSpan="5" Grid.RowSpan="3"/>
+			<Button x:Name="ArrowBackButton" HorizontalAlignment="Left" Height="109" Margin="40,64,0,0" VerticalAlignment="Top" Width="106" BorderThickness="0" Padding="0" Click="ArrowBackButton_Click" Style="{StaticResource BackbuttonStyle}" Grid.RowSpan="2">
 				<Image Source="Assets/images/arrowback.png" Stretch="Fill" Height="93" Width="93"/>
 			</Button>
-			<Button x:Name="ArrowForwardButton" HorizontalAlignment="Left" Margin="1189,631,0,0" VerticalAlignment="Top" Height="95" Width="95" BorderThickness="0" Padding="0" Click="ArrowForwardButton_Click">
+			<Button x:Name="ArrowForwardButton" HorizontalAlignment="Left" Margin="230.7,539.5,0,0" VerticalAlignment="Top" Height="95" Width="95" BorderThickness="0" Padding="0" Click="ArrowForwardButton_Click" Grid.Column="3" Grid.RowSpan="2" Grid.Row="1">
 				<Image Source="Assets/images/arrowforward.png" Stretch="Fill" Height="88" Width="88"/>
 			</Button>
-			<ToggleButton x:Name="HouseToggleButton" Click="HouseToggleButton_Click" HorizontalAlignment="Left" Margin="300,130,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
-				<Image Source="Assets/images/house.png" Stretch="Fill" Height="90" Width="89"/>
+			<ToggleButton x:Name="HouseToggleButton" Click="HouseToggleButton_Click" HorizontalAlignment="Left" Margin="34.9,82,0,0" VerticalAlignment="Top" Height="130" Width="130" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}" Grid.Column="1" Grid.Row="1">
+				<Image Source="Assets/images/house.png" Stretch="Fill"/>
 			</ToggleButton>
-			<ToggleButton x:Name="ApartmentToggleButton" Click="ApartmentToggleButton_Click" HorizontalAlignment="Left" Margin="399,130,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
-				<Image Source="Assets/images/apartment.png" Stretch="Fill" Width="90" Height="90"/>
+			<ToggleButton x:Name="ApartmentToggleButton" Click="ApartmentToggleButton_Click" HorizontalAlignment="Left" Margin="180.9,82,0,0" VerticalAlignment="Top" Height="130" Width="130" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}" Grid.Column="1" Grid.Row="1">
+				<Image Source="Assets/images/apartment.png" Stretch="Fill"/>
 			</ToggleButton>
-			<ToggleButton x:Name="RowHouseToggleButton" Click="RowHouseToggleButton_Click" HorizontalAlignment="Left" Margin="498,130,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
-				<Image Height="90" Source="Assets/images/rowhouse.png" Stretch="Fill" Width="90"/>
+			<ToggleButton x:Name="RowHouseToggleButton" Click="RowHouseToggleButton_Click" HorizontalAlignment="Left" Margin="34.9,222,0,0" VerticalAlignment="Top" Height="130" Width="130" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}" Grid.Column="1" Grid.Row="1">
+				<Image Source="Assets/images/rowhouse.png" Stretch="Fill"/>
 			</ToggleButton>
-			<ToggleButton x:Name="PairHouseToggleButton" Click="PairHouseToggleButton_Click" HorizontalAlignment="Left" Margin="300,229,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
-				<Image Height="90" Source="Assets/images/pairhouse.png" Stretch="Fill" Width="90"/>
+			<ToggleButton x:Name="PairHouseToggleButton" Click="PairHouseToggleButton_Click" HorizontalAlignment="Left" Margin="180.9,222,0,0" VerticalAlignment="Top" Height="130" Width="130" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}" Grid.Column="1" Grid.Row="1">
+				<Image Source="Assets/images/pairhouse.png" Stretch="Fill"/>
 			</ToggleButton>
-			<ToggleButton x:Name="SummerHouseToggleButton" Click="SummerHouseToggleButton_Click" HorizontalAlignment="Left" Margin="399,229,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
-				<Image Height="90" Source="Assets/images/summerhouse.png" Stretch="Fill" Width="90"/>
+			<ToggleButton x:Name="SummerHouseToggleButton" Click="SummerHouseToggleButton_Click" HorizontalAlignment="Left" Margin="34.9,365,0,0" VerticalAlignment="Top" Height="130" Width="130" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}" Grid.Column="1" Grid.Row="1">
+				<Image Source="Assets/images/summerhouse.png" Stretch="Fill"/>
 			</ToggleButton>
-			<ToggleButton x:Name="SaunaToggleButton" Click="SaunaToggleButton_Click" HorizontalAlignment="Left" Margin="498,229,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
-				<Image Height="90" Source="Assets/images/sauna.png" Stretch="Fill" Width="90"/>
+			<ToggleButton x:Name="SaunaToggleButton" Click="SaunaToggleButton_Click" HorizontalAlignment="Left" Margin="180.9,365,0,0" VerticalAlignment="Top" Height="130" Width="130" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}" Grid.Column="1" Grid.Row="1">
+				<Image Source="Assets/images/sauna.png" Stretch="Fill"/>
 			</ToggleButton>
-			<TextBlock x:Name="OfferHouseTypeTextBlock" HorizontalAlignment="Left" Margin="303,101,0,0" TextWrapping="Wrap" Text="House type" VerticalAlignment="Top" FontSize="26.667"/>
-			<TextBlock x:Name="OfferAreaTextBlock" HorizontalAlignment="Left" Margin="303,344,0,0" TextWrapping="Wrap" Text="Area" VerticalAlignment="Top" FontSize="26.667"/>
-			<TextBlock x:Name="OfferBuildYearTextBlock" HorizontalAlignment="Left" Margin="303,429,0,0" TextWrapping="Wrap" Text="Buil year" VerticalAlignment="Top" FontSize="26.667"/>
-			<TextBlock x:Name="OfferAddressTextBlock" HorizontalAlignment="Left" Margin="642,101,0,0" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top" FontSize="26.667"/>
-			<TextBlock x:Name="OfferPostalCodeTextBlock" HorizontalAlignment="Left" Margin="642,338,0,0" TextWrapping="Wrap" Text="Postal code" VerticalAlignment="Top" FontSize="26.667"/>
-			<TextBlock x:Name="OfferStartDateTextBlock" HorizontalAlignment="Left" Margin="642,429,0,0" TextWrapping="Wrap" Text="Start date" VerticalAlignment="Top" FontSize="26.667"/>
-			<TextBlock x:Name="OfferBillingPeriodTextBlock" HorizontalAlignment="Left" Margin="992,101,0,0" TextWrapping="Wrap" Text="Billing period" VerticalAlignment="Top" FontSize="26.667"/>
-			<TextBlock x:Name="OfferCurrencyTextBlock" HorizontalAlignment="Left" Margin="992,242,0,0" TextWrapping="Wrap" Text="Currency" VerticalAlignment="Top" FontSize="26.667"/>
-			<ToggleButton x:Name="MonthToggleButton" Click="MonthToggleButton_Click" HorizontalAlignment="Left" Margin="991,130,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
-				<Image Source="Assets/images/1month.png" Stretch="Fill" Height="90" Width="89"/>
+			<TextBlock x:Name="OfferHouseTypeTextBlock" HorizontalAlignment="Left" Margin="37.9,30,0,0" TextWrapping="Wrap" Text="House type" VerticalAlignment="Top" FontSize="32" Grid.Column="1" Height="47" Width="201" Grid.Row="1" FontFamily="Merriweather Sans" FontWeight="Bold"/>
+			<TextBlock x:Name="OfferAreaTextBlock" HorizontalAlignment="Left" Margin="37.8,136,0,0" TextWrapping="Wrap" Text="Area" VerticalAlignment="Top" FontSize="32" Grid.Column="2" Height="32" Width="184" Grid.Row="1" FontFamily="Merriweather Sans" FontWeight="Bold"/>
+            <TextBlock x:Name="OfferBuildYearTextBlock" HorizontalAlignment="Left" Margin="37.8,233,0,0" TextWrapping="Wrap" Text="Build year" VerticalAlignment="Top" FontSize="32" Width="184" Grid.Column="2" Height="50" Grid.Row="1" FontFamily="Merriweather Sans" FontWeight="Bold">
+            </TextBlock>
+			<TextBlock x:Name="OfferAddressTextBlock" HorizontalAlignment="Left" Margin="37.8,30,0,0" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top" FontSize="32" Grid.Column="2" Height="32" Width="184" Grid.Row="1" FontFamily="Merriweather Sans" FontWeight="Bold"/>
+			<TextBlock x:Name="OfferPostalCodeTextBlock" HorizontalAlignment="Left" Margin="37.8,327,0,0" TextWrapping="Wrap" Text="Postal code" VerticalAlignment="Top" FontSize="32" Grid.Column="2" Height="32" Width="184" Grid.Row="1" FontFamily="Merriweather Sans" FontWeight="Bold"/>
+			<TextBlock x:Name="OfferStartDateTextBlock" HorizontalAlignment="Left" Margin="37.8,419,0,0" TextWrapping="Wrap" Text="Start date" VerticalAlignment="Top" FontSize="32" Grid.Column="2" Height="32" Width="280" Grid.Row="1" FontFamily="Merriweather Sans" FontWeight="Bold"/>
+			<TextBlock x:Name="OfferBillingPeriodTextBlock" HorizontalAlignment="Left" Margin="33.7,30,0,0" TextWrapping="Wrap" Text="Billing period" VerticalAlignment="Top" FontSize="32" Grid.Column="3" Height="47" Width="289" Grid.Row="1" FontFamily="Merriweather Sans" FontWeight="Bold"/>
+			<TextBlock x:Name="OfferCurrencyTextBlock" HorizontalAlignment="Left" Margin="30.7,194,0,0" TextWrapping="Wrap" Text="Currency" VerticalAlignment="Top" FontSize="32" Grid.Column="3" Height="46" Width="190" Grid.Row="1" FontFamily="Merriweather Sans" FontWeight="Bold"/>
+			<ToggleButton x:Name="MonthToggleButton" Click="MonthToggleButton_Click" HorizontalAlignment="Left" Margin="30.7,74,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}" Grid.Column="3" Grid.Row="1">
+				<Image Source="Assets/images/1month.png" Stretch="Fill"/>
 			</ToggleButton>
-			<ToggleButton x:Name="QuarterToggleButton" Click="QuarterToggleButton_Click" HorizontalAlignment="Left" Margin="1090,130,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
-				<Image Source="Assets/images/quarter.png" Stretch="Fill" Width="90" Height="90"/>
+			<ToggleButton x:Name="QuarterToggleButton" Click="QuarterToggleButton_Click" HorizontalAlignment="Left" Margin="136.7,74,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}" Grid.Column="3" Grid.Row="1">
+				<Image Source="Assets/images/quarter.png" Stretch="Fill"/>
 			</ToggleButton>
-			<ToggleButton x:Name="YearToggleButton" Click="YearToggleButton_Click" HorizontalAlignment="Left" Margin="1189,130,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
-				<Image Height="90" Source="Assets/images/1year.png" Stretch="Fill" Width="90"/>
+			<ToggleButton x:Name="YearToggleButton" Click="YearToggleButton_Click" HorizontalAlignment="Left" Margin="244.7,74,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}" Grid.Column="3" Grid.Row="1">
+				<Image Source="Assets/images/1year.png" Stretch="Fill"/>
 			</ToggleButton>
-			<ToggleButton x:Name="EuroToggleButton" Click="EuroToggleButton_Click" HorizontalAlignment="Left" Margin="986,270,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
-				<Image Source="Assets/images/Euro.png" Stretch="Fill" Height="90" Width="89"/>
+			<ToggleButton x:Name="EuroToggleButton" Click="EuroToggleButton_Click" HorizontalAlignment="Left" Margin="30.7,237,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}" Grid.Column="3" Grid.Row="1">
+				<Image Source="Assets/images/Euro.png" Stretch="Fill"/>
 			</ToggleButton>
-			<ToggleButton x:Name="DollarToggleButton" Click="DollarToggleButton_Click" HorizontalAlignment="Left" Margin="1085,270,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
-				<Image Source="Assets/images/usd.png" Stretch="Fill" Width="90" Height="90"/>
+			<ToggleButton x:Name="DollarToggleButton" Click="DollarToggleButton_Click" HorizontalAlignment="Left" Margin="136.7,237,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}" Grid.Column="3" Grid.Row="1">
+				<Image Source="Assets/images/usd.png" Stretch="Fill"/>
 			</ToggleButton>
-			<TextBox x:Name="OfferBuildYearTextBox" HorizontalAlignment="Left" Margin="303,465,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
-			<TextBox x:Name="OfferAreaTextBox" HorizontalAlignment="Left" Margin="303,375,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
-			<TextBox x:Name="OfferAddressTextBox" HorizontalAlignment="Left" Margin="642,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
-			<TextBox x:Name="OfferTextBox" HorizontalAlignment="Left" Margin="642,375,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
-			<DatePicker x:Name="OfferStartDatePicker" HorizontalAlignment="Left" Margin="642,465,0,0" VerticalAlignment="Top"/>
-			<Button x:Name="OfferPriceMeButton" HorizontalAlignment="Left" Height="110" Margin="986,426,0,0" VerticalAlignment="Top" Width="110" BorderThickness="0" Padding="0" Click="OfferPriceMeButton_Click">
-				<Image Height="100" Source="Assets/images/priceme.png" Stretch="Fill" Width="100"/>
+			<TextBox x:Name="OfferBuildYearTextBox" HorizontalAlignment="Left" Margin="37.8,278,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Grid.Column="2" Height="32" Grid.Row="1" FontFamily="Merriweather Sans" FontSize="16" FontWeight="Bold" Foreground="#FF1BA0D4"/>
+			<TextBox x:Name="OfferAreaTextBox" HorizontalAlignment="Left" Margin="37.8,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Grid.Column="2" Height="32" Grid.Row="1" FontFamily="Merriweather Sans" FontSize="16" FontWeight="Bold" Foreground="#FF1BA0D4"/>
+			<TextBox x:Name="OfferAddressTextBox" HorizontalAlignment="Left" Margin="37.8,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" Grid.Column="2" Height="32" Grid.Row="1" FontFamily="Merriweather Sans" FontSize="16" FontWeight="Bold" Foreground="#FF1BA0D4"/>
+			<TextBox x:Name="OfferTextBox" HorizontalAlignment="Left" Margin="37.8,368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Grid.Column="2" Height="32" Grid.Row="1" FontFamily="Merriweather Sans" FontSize="16" FontWeight="Bold" Foreground="#FF1BA0D4"/>
+			<DatePicker x:Name="OfferStartDatePicker" HorizontalAlignment="Left" Margin="37.8,460,0,0" VerticalAlignment="Top" Grid.Column="2" Height="32" Width="298" Grid.Row="1" FontFamily="Merriweather Sans" FontSize="16" FontWeight="Bold" Foreground="#FF1BA0D4"/>
+			<Button x:Name="OfferPriceMeButton" HorizontalAlignment="Left" Height="130" Margin="27.7,365,0,0" VerticalAlignment="Top" Width="130" BorderThickness="0" Padding="0" Click="OfferPriceMeButton_Click" Grid.Column="3" Grid.Row="1">
+				<Image Source="Assets/images/priceme.png" Stretch="Fill"/>
 			</Button>
-			<TextBlock x:Name="OfferPriceResultTextBox" HorizontalAlignment="Left" FontSize="70" Margin="1098,402,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="167" Width="231"/>
+			<TextBox x:Name="OfferPriceResultTextBox" Grid.Column="3" HorizontalAlignment="Left" Margin="178.7,419,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Merriweather Sans" FontWeight="Bold" Foreground="#FF1BA0D4" Width="163" Height="73" FontSize="48" TextAlignment="Right"/>
 		</Grid>
 	</Viewbox>
 </Page>
