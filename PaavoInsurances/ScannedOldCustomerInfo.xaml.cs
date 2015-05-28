@@ -182,6 +182,11 @@ namespace PaavoInsurances
             this.Frame.Navigate(typeof(MainPage));
         }
 
+        private void OldCustomerOrderMeButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(HomeInsuranceOffer));
+        }
+
         
     }
 }
