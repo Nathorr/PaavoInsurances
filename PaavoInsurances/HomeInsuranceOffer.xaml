@@ -15,22 +15,22 @@
         <Button Name="ArrowForwardButton" HorizontalAlignment="Left" Margin="1189,631,0,0" VerticalAlignment="Top" Height="95" Width="95" BorderThickness="0" Padding="0" Click="ArrowForwardButton_Click">
     		<Image Source="Assets/images/arrowforward.png" Stretch="Fill" Height="88" Width="88"/>
     	</Button>
-    	<ToggleButton Name="HouseToggleButton" HorizontalAlignment="Left" Margin="300,130,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0">
+    	<ToggleButton Name="HouseToggleButton" HorizontalAlignment="Left" Margin="300,130,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
     		<Image Source="Assets/images/house.png" Stretch="Fill" Height="90" Width="89"/>
     	</ToggleButton>
-    	<ToggleButton Name="ApartmentToggleButton" HorizontalAlignment="Left" Margin="399,130,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0">
+    	<ToggleButton Name="ApartmentToggleButton" HorizontalAlignment="Left" Margin="399,130,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
     		<Image Source="Assets/images/apartment.png" Stretch="Fill" Width="90" Height="90"/>
     	</ToggleButton>
-    	<ToggleButton Name="RowHouseToggleButton" HorizontalAlignment="Left" Margin="498,130,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0">
+    	<ToggleButton Name="RowHouseToggleButton" HorizontalAlignment="Left" Margin="498,130,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
     		<Image Height="90" Source="Assets/images/rowhouse.png" Stretch="Fill" Width="90"/>
     	</ToggleButton>
-    	<ToggleButton Name="PairHouseToggleButton" HorizontalAlignment="Left" Margin="300,229,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0">
+    	<ToggleButton Name="PairHouseToggleButton" HorizontalAlignment="Left" Margin="300,229,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
     		<Image Height="90" Source="Assets/images/pairhouse.png" Stretch="Fill" Width="90"/>
     	</ToggleButton>
-    	<ToggleButton Name="SummerHouseToggleButton" HorizontalAlignment="Left" Margin="399,229,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0">
+    	<ToggleButton Name="SummerHouseToggleButton" HorizontalAlignment="Left" Margin="399,229,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
     		<Image Height="90" Source="Assets/images/summerhouse.png" Stretch="Fill" Width="90"/>
     	</ToggleButton>
-    	<ToggleButton Name="SaunaToggleButton" HorizontalAlignment="Left" Margin="498,229,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0">
+    	<ToggleButton Name="SaunaToggleButton" HorizontalAlignment="Left" Margin="498,229,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
     		<Image Height="90" Source="Assets/images/sauna.png" Stretch="Fill" Width="90"/>
     	</ToggleButton>
     	<TextBlock x:Name="OfferHouseTypeTextBlock" HorizontalAlignment="Left" Margin="303,101,0,0" TextWrapping="Wrap" Text="House type" VerticalAlignment="Top" FontSize="26.667"/>
@@ -41,19 +41,19 @@
     	<TextBlock x:Name="OfferStartDateTextBlock" HorizontalAlignment="Left" Margin="642,429,0,0" TextWrapping="Wrap" Text="Start date" VerticalAlignment="Top" FontSize="26.667"/>
     	<TextBlock x:Name="OfferBillingPeriodTextBlock" HorizontalAlignment="Left" Margin="992,101,0,0" TextWrapping="Wrap" Text="Billing period" VerticalAlignment="Top" FontSize="26.667"/>
     	<TextBlock x:Name="OfferCurrencyTextBlock" HorizontalAlignment="Left" Margin="992,242,0,0" TextWrapping="Wrap" Text="Currency" VerticalAlignment="Top" FontSize="26.667"/>
-    	<ToggleButton Name="MonthToggleButton" HorizontalAlignment="Left" Margin="991,130,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0">
+    	<ToggleButton Name="MonthToggleButton" HorizontalAlignment="Left" Margin="991,130,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
     		<Image Source="Assets/images/1month.png" Stretch="Fill" Height="90" Width="89"/>
     	</ToggleButton>
-    	<ToggleButton Name="QuarterToggleButton" HorizontalAlignment="Left" Margin="1090,130,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0">
+    	<ToggleButton Name="QuarterToggleButton" HorizontalAlignment="Left" Margin="1090,130,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
     		<Image Source="Assets/images/quarter.png" Stretch="Fill" Width="90" Height="90"/>
     	</ToggleButton>
-    	<ToggleButton Name="YearToggleButton" HorizontalAlignment="Left" Margin="1189,130,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0">
+    	<ToggleButton Name="YearToggleButton" HorizontalAlignment="Left" Margin="1189,130,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
     		<Image Height="90" Source="Assets/images/1year.png" Stretch="Fill" Width="90"/>
     	</ToggleButton>
-    	<ToggleButton Name="EuroToggleButton" HorizontalAlignment="Left" Margin="986,270,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0">
+    	<ToggleButton Name="EuroToggleButton" HorizontalAlignment="Left" Margin="986,270,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
     		<Image Source="Assets/images/Euro.png" Stretch="Fill" Height="90" Width="89"/>
     	</ToggleButton>
-    	<ToggleButton Name="DollarToggleButton" HorizontalAlignment="Left" Margin="1085,270,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0">
+    	<ToggleButton Name="DollarToggleButton" HorizontalAlignment="Left" Margin="1085,270,0,0" VerticalAlignment="Top" Height="100" Width="100" BorderThickness="0" Padding="0" Style="{StaticResource ToggleButtonStyle}">
     		<Image Source="Assets/images/usd.png" Stretch="Fill" Width="90" Height="90"/>
     	</ToggleButton>
     	<TextBox Name="OfferBuildYearTextBox" HorizontalAlignment="Left" Margin="303,465,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
