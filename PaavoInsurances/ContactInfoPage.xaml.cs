@@ -29,7 +29,7 @@ namespace PaavoInsurances
     public sealed partial class ContactInfoPage : Page
     {
 
-        public List<HomeInsuranceClass> insuranceList = new List<HomeInsuranceClass>();
+        /*public List<HomeInsuranceClass> insuranceList = new List<HomeInsuranceClass>();
 
         [DataContract]
         public class ReturnedData
@@ -112,7 +112,7 @@ namespace PaavoInsurances
             public string currency { get; set; }
             [DataMember(Name = "billingPeriod")]
             public string billingPeriod { get; set; }
-        }
+        }*/
 
         public ContactInfoPage()
         {
