@@ -16,12 +16,7 @@
 					<CompositeTransform Rotation="-5.104"/>
 				</Image.RenderTransform>
 			</Image>
-			<TextBlock HorizontalAlignment="Left" Margin="204,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Merriweather Sans" FontWeight="Bold" FontSize="80" Height="251" Width="757" TextAlignment="Center">
-				<Run Text="Order confi"/>
-				<Run Text="r"/>
-				<Run Text="med,"/>
-				<LineBreak/>
-				<Run Text="Thank You!"/>
+            <TextBlock HorizontalAlignment="Left" Margin="204,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Merriweather Sans" FontWeight="Bold" FontSize="80" Height="251" Width="757" TextAlignment="Center" Text="Order confirmed, Thank You!">
 			</TextBlock>
 		</Grid>
 	</Viewbox>

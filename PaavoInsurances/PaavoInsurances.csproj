@@ -127,6 +127,9 @@
       <DependentUpon>ScannedOldCustomerInfo.xaml</DependentUpon>
     </Compile>
     <Compile Include="SpamTable.cs" />
+    <Compile Include="SpamThankYouPage.xaml.cs">
+      <DependentUpon>SpamThankYouPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
     <Compile Include="ThankYouPage.xaml.cs">
@@ -207,6 +210,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ScannedOldCustomerInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SpamThankYouPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

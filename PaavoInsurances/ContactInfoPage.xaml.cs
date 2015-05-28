@@ -272,6 +272,7 @@ namespace PaavoInsurances
             FillDataBase(contactInfo);
             ContactInfoPopup.IsOpen = true;
             FetchData();
+            this.Frame.Navigate(typeof(SpamThankYouPage));
         }
 
         private void ConfirmationNoButton_Click(object sender, RoutedEventArgs e)
