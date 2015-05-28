@@ -151,8 +151,12 @@
     <Content Include="Assets\images\Health.png" />
     <Content Include="Assets\images\home.png" />
     <Content Include="Assets\images\house.png" />
+    <Content Include="Assets\images\icon.png" />
+    <Content Include="Assets\images\icon150.png" />
+    <Content Include="Assets\images\icon30.png" />
     <Content Include="Assets\images\infant.png" />
     <Content Include="Assets\images\life.png" />
+    <Content Include="Assets\images\logo.png" />
     <Content Include="Assets\images\logobig.png" />
     <Content Include="Assets\images\logosmall.png" />
     <Content Include="Assets\images\no.png" />
@@ -164,6 +168,7 @@
     <Content Include="Assets\images\rowhouse.png" />
     <Content Include="Assets\images\sauna.png" />
     <Content Include="Assets\images\scanme.png" />
+    <Content Include="Assets\images\splashscreen.png" />
     <Content Include="Assets\images\summerhouse.png" />
     <Content Include="Assets\images\usd.png" />
     <Content Include="Assets\images\vehicle.png" />
