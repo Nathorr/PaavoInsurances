@@ -233,18 +233,37 @@ namespace PaavoInsurances
 
         private async void OfferPriceMeButton_Click(object sender, RoutedEventArgs e)
         {
-
+            if (!(ApartmentToggleButton.IsChecked == true || RowHouseToggleButton.IsChecked == true || PairHouseToggleButton.IsChecked == true || SummerHouseToggleButton.IsChecked == true ||
+                SaunaToggleButton.IsChecked == true || HouseToggleButton.IsChecked == true) || !(MonthToggleButton.IsChecked == true || QuarterToggleButton.IsChecked == true ||
+                YearToggleButton.IsChecked == true) || !(DollarToggleButton.IsChecked == true || EuroToggleButton.IsChecked == true))
+                return;
+            if (string.IsNullOrWhiteSpace(OfferAreaTextBox.Text) ||
+            string.IsNullOrWhiteSpace(OfferAddressTextBox.Text) || string.IsNullOrWhiteSpace(OfferBuildYearTextBox.Text) || string.IsNullOrWhiteSpace(OfferTextBox.Text))
+                return;
+            
             CalculatePrice();
             //TÄHÄN SITTEN SE OTSON KANTAAN ÄNKEMINEN JOKA EI EES VITTU TUU TÄLLE SIVULLE LEL
 
-
+           /* ApartmentToggleButton.IsChecked = false;
+            RowHouseToggleButton.IsChecked = false;
+            PairHouseToggleButton.IsChecked = false;
+            SummerHouseToggleButton.IsChecked = false;
+            SaunaToggleButton.IsChecked = false;
+            price.houseType = "HOUSE";*/
 
         }
         private void ArrowForwardButton_Click(object sender, RoutedEventArgs e)
         {
             //Price price = new Price();
             //CameraClass cameraClass = new CameraClass();
-
+            if (!(ApartmentToggleButton.IsChecked == true || RowHouseToggleButton.IsChecked == true || PairHouseToggleButton.IsChecked == true || SummerHouseToggleButton.IsChecked == true ||
+                SaunaToggleButton.IsChecked == true || HouseToggleButton.IsChecked == true) || !(MonthToggleButton.IsChecked == true || QuarterToggleButton.IsChecked == true ||
+                YearToggleButton.IsChecked == true) || !(DollarToggleButton.IsChecked == true || EuroToggleButton.IsChecked == true))
+                return;
+            if (string.IsNullOrWhiteSpace(OfferAreaTextBox.Text) ||
+            string.IsNullOrWhiteSpace(OfferAddressTextBox.Text) || string.IsNullOrWhiteSpace(OfferBuildYearTextBox.Text) || string.IsNullOrWhiteSpace(OfferTextBox.Text))
+                return;
+            
             CalculatePrice();
 
             if (HouseToggleButton.IsChecked == true)
@@ -345,7 +364,7 @@ namespace PaavoInsurances
             cameraClass.homeInsuranceClass.pricingParameters.area = OfferAreaTextBox.Text;
             cameraClass.homeInsuranceClass.pricingParameters.buildYear = OfferBuildYearTextBox.Text;
             cameraClass.homeInsuranceClass.pricingParameters.address = OfferAddressTextBox.Text;
-            cameraClass.homeInsuranceClass.pricingParameters.postalCode = OfferAddressTextBox.Text;
+            cameraClass.homeInsuranceClass.pricingParameters.postalCode = OfferTextBox.Text;
             cameraClass.homeInsuranceClass.pricingParameters.insuranceStartDate = OfferStartDatePicker.Date.Day.ToString() + "." + OfferStartDatePicker.Date.Month.ToString() + "." + OfferStartDatePicker.Date.Year.ToString();
             cameraClass.previousPage = "homeInsuranceOffer";
 
@@ -452,6 +471,16 @@ namespace PaavoInsurances
         }
 
         private void postalCodeKeyDown(object sender, KeyRoutedEventArgs e)
+        {
+            char key = Convert.ToChar(e.Key);
+
+            if (key < '0' || key > '9')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void AreaKeyDown(object sender, KeyRoutedEventArgs e)
         {
             char key = Convert.ToChar(e.Key);
 
