@@ -291,7 +291,7 @@ namespace PaavoInsurances
             if (ConfirmPopup.IsOpen == true)
             {
                 ConfirmPopup.IsOpen = false;
-                //Frame.Navigate(typeof(MainPage));
+                Frame.Navigate(typeof(ThankYouPage));
             }
         }
 
