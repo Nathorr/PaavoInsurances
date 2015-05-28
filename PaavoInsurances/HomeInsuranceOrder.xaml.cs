@@ -86,11 +86,25 @@ namespace PaavoInsurances
        
         async private void InsertId(string id, string scanId)
         {
-            SQLiteAsyncConnection conn = new SQLiteAsyncConnection("clientTable");
+            SQLiteAsyncConnection conn = new SQLiteAsyncConnection("ClientTable");
 
             ClientTable client = new ClientTable
             {
                 Id = id,
+                securityId = scanId,
+            };
+
+            await conn.InsertAsync(client);
+        }
+
+        async private void insertBonusCard(string bonusCard, string id, string scanId)
+        {
+            SQLiteAsyncConnection conn = new SQLiteAsyncConnection("ClientTable");
+
+            ClientTable client = new ClientTable
+            {
+                Id = id,
+                bonusCardNumber = bonusCard,
                 securityId = scanId,
             };
 
@@ -170,9 +184,11 @@ namespace PaavoInsurances
             {
                 //ID joka yhistetään tauluun henkkaritunnuksen kanssa.
                 var result = await content.ReadAsStringAsync();
-                Debug.WriteLine(result);
-                InsertId(result, "asdasda");
+                ReturnId deSer = JsonConvert.DeserializeObject<ReturnId>(result);
+                InsertId(deSer.id, cameraClass.socialSecurityId);
             }
+            if (ConfirmPopup.IsOpen == true)
+                ConfirmPopup.IsOpen = false;
         }
 
         private void ConfirmationNoButton_Click(object sender, RoutedEventArgs e)

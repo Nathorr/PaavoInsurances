@@ -11,7 +11,7 @@
 
 		<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="768" Width="1366">
 			<Image Margin="0,0,1,0" Source="Assets/images/background.png" Stretch="Fill"/>
-			<Button x:Name="ArrowBackButton" HorizontalAlignment="Left" Height="109" Margin="80,72,0,0" VerticalAlignment="Top" Width="106" BorderThickness="0" Padding="0">
+			<Button x:Name="ArrowBackButton" HorizontalAlignment="Left" Height="109" Margin="80,72,0,0" VerticalAlignment="Top" Width="106" BorderThickness="0" Padding="0" Click="ArrowBackButton_Click">
 				<Image Source="Assets/images/arrowback.png" Stretch="Fill" Height="93" Width="93"/>
 			</Button>
 			<Button x:Name="ArrowForwardButton" HorizontalAlignment="Left" Margin="1189,631,0,0" VerticalAlignment="Top" Height="95" Width="95" BorderThickness="0" Padding="0">

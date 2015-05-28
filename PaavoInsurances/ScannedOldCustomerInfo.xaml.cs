@@ -42,16 +42,29 @@ namespace PaavoInsurances
             cameraClass = (CameraClass)e.Parameter;
 
             GetUserFromSqlite(cameraClass);
+            FetchData();
 
         }
         async private void GetUserFromSqlite(CameraClass cameraClass)
         {
+            Debug.WriteLine(cameraClass.socialSecurityId);
             SQLiteAsyncConnection conn = new SQLiteAsyncConnection("ClientTable");
-            var query = conn.Table<ClientTable>().Where(x => x.securityId == cameraClass.homeInsuranceClass.id);
+            var query = conn.Table<ClientTable>().Where(x => x.securityId == cameraClass.socialSecurityId);
             var result = await query.ToListAsync();
             foreach (var item in result)
             {
                 getJson(item.Id);
+            }
+        }
+        private async void FetchData()
+        {
+            SQLiteAsyncConnection conn = new SQLiteAsyncConnection("ClientTable");
+
+            var query = conn.Table<ClientTable>();
+            var result = await query.ToListAsync();
+            foreach (var item in result)
+            {
+                Debug.WriteLine("Tämä tulee kannasta: "+item.bonusCardNumber + " " + item.Id + " " + item.securityId);
             }
         }
         
@@ -156,6 +169,11 @@ namespace PaavoInsurances
 
             this.Frame.Navigate(typeof(CameraPage), cameraClass);
 
+        }
+
+        private void ArrowBackButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage));
         }
 
         
