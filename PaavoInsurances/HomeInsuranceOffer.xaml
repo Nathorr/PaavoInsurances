@@ -72,14 +72,14 @@
 				<Image Source="Assets/images/usd.png" Stretch="Fill" Margin="4"/>
 			</ToggleButton>
 			<TextBox x:Name="OfferBuildYearTextBox" HorizontalAlignment="Left" Margin="37.8,278,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" Grid.Column="2" Height="45" Grid.Row="1" FontFamily="Merriweather Sans" FontSize="24" FontWeight="Bold" Foreground="#FF1BA0D4" KeyDown="buildYearKeyDown"  />
-            <TextBox x:Name="OfferAreaTextBox" HorizontalAlignment="Left" Margin="37.8,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" Grid.Column="2" Height="45" Grid.Row="1" FontFamily="Merriweather Sans" FontSize="24" FontWeight="Bold" Foreground="#FF1BA0D4" KeyDown="postalCodeKeyDown" />
+            <TextBox x:Name="OfferAreaTextBox" HorizontalAlignment="Left" Margin="37.8,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" Grid.Column="2" Height="45" Grid.Row="1" FontFamily="Merriweather Sans" FontSize="24" FontWeight="Bold" Foreground="#FF1BA0D4" />
 			<TextBox x:Name="OfferAddressTextBox" HorizontalAlignment="Left" Margin="37.8,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" Grid.Column="2" Height="45" Grid.Row="1" FontFamily="Merriweather Sans" FontSize="24" FontWeight="Bold" Foreground="#FF1BA0D4"/>
-			<TextBox x:Name="OfferTextBox" HorizontalAlignment="Left" Margin="37.8,368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" Grid.Column="2" Height="45" Grid.Row="1" FontFamily="Merriweather Sans" FontSize="24" FontWeight="Bold" Foreground="#FF1BA0D4"/>
+            <TextBox x:Name="OfferTextBox" HorizontalAlignment="Left" Margin="37.8,368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" Grid.Column="2" Height="45" Grid.Row="1" FontFamily="Merriweather Sans" FontSize="24" FontWeight="Bold" Foreground="#FF1BA0D4" KeyDown="postalCodeKeyDown"/>
 			<DatePicker x:Name="OfferStartDatePicker" HorizontalAlignment="Left" Margin="37.8,460,0,0" VerticalAlignment="Top" Grid.Column="2" Height="45" Width="298" Grid.Row="1" FontFamily="Merriweather Sans" FontSize="24" FontWeight="Bold" Foreground="#FF1BA0D4"/>
 			<Button x:Name="OfferPriceMeButton" HorizontalAlignment="Left" Height="130" Margin="27.7,365,0,0" VerticalAlignment="Top" Width="130" BorderThickness="0" Padding="0" Click="OfferPriceMeButton_Click" Grid.Column="3" Grid.Row="1">
 				<Image Source="Assets/images/priceme.png" Stretch="Fill"/>
 			</Button>
-			<TextBox x:Name="OfferPriceResultTextBox" Grid.Column="3" HorizontalAlignment="Left" Margin="178.7,419,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Merriweather Sans" FontWeight="Bold" Foreground="#FF1BA0D4" Width="163" Height="73" FontSize="40" TextAlignment="Right"/>
+			<TextBox x:Name="OfferPriceResultTextBox" Grid.Column="3" HorizontalAlignment="Left" Margin="178.7,419,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Merriweather Sans" FontWeight="Bold" Foreground="#FF1BA0D4" Width="163" Height="73" FontSize="32" TextAlignment="Right"/>
 		</Grid>
 	</Viewbox>
 </Page>

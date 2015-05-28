@@ -7,14 +7,17 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    	<Image Margin="0" Source="Assets/images/background.png" Stretch="Fill"/>
-    	<Image Margin="244,420,325,246" Source="Assets/images/logobig.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
-    		<Image.RenderTransform>
-    			<CompositeTransform Rotation="-5.104"/>
-    		</Image.RenderTransform>
-    	</Image>
-    	<TextBlock HorizontalAlignment="Left" Margin="204,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Merriweather Sans" FontWeight="Bold" FontSize="80" Height="251" Width="757" TextAlignment="Center" Text="We will contact you soon!"/>
+    <Viewbox HorizontalAlignment="Left" VerticalAlignment="Top">
 
-    </Grid>
+		<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="768" Width="1366">
+			<Image Margin="0" Source="Assets/images/background.png" Stretch="Fill"/>
+			<Image Margin="244,420,325,246" Source="Assets/images/logobig.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
+				<Image.RenderTransform>
+					<CompositeTransform Rotation="-5.104"/>
+				</Image.RenderTransform>
+			</Image>
+			<TextBlock HorizontalAlignment="Left" Margin="204,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Merriweather Sans" FontWeight="Bold" FontSize="80" Height="251" Width="757" TextAlignment="Center" Text="We will contact you soon!"/>
+
+		</Grid>
+	</Viewbox>
 </Page>
