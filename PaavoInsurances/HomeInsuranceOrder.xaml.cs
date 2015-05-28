@@ -275,18 +275,18 @@ namespace PaavoInsurances
             clientOb.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", authString);
             clientOb.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
             HttpResponseMessage response = await clientOb.PostAsync(RequestUrl, new StringContent(sr_string, Encoding.UTF8, "application/json"));
-            Debug.WriteLine(response);
+            //Debug.WriteLine(response);
             using (HttpContent content = response.Content)
             {
-                Debug.WriteLine("Id tässä vaiheessa1: " + cameraClass.homeInsuranceClass.id);
+                //Debug.WriteLine("Id tässä vaiheessa1: " + cameraClass.homeInsuranceClass.id);
                 //ID joka yhistetään tauluun henkkaritunnuksen kanssa.
                 var result = await content.ReadAsStringAsync();
-                Debug.WriteLine("Result palvelimelta: " + result);
+                //Debug.WriteLine("Result palvelimelta: " + result);
                 
                 ReturnId deSer = JsonConvert.DeserializeObject<ReturnId>(result);
                 //InsertId(deSer.id, cameraClass.socialSecurityId);
-                Debug.WriteLine("Id tässä vaiheessa2: " + cameraClass.homeInsuranceClass.id);
-                Debug.WriteLine("Deser id: " + deSer.id);
+                //Debug.WriteLine("Id tässä vaiheessa2: " + cameraClass.homeInsuranceClass.id);
+                //Debug.WriteLine("Deser id: " + deSer.id);
                 insertBonusCard(cameraClass.bonusCard, deSer.id, cameraClass.socialSecurityId, cameraClass);
             }
             if (ConfirmPopup.IsOpen == true)

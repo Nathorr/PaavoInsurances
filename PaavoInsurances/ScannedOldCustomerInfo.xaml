@@ -14,7 +14,7 @@
 			<Button x:Name="ArrowBackButton" HorizontalAlignment="Left" Height="109" Margin="80,72,0,0" VerticalAlignment="Top" Width="106" BorderThickness="0" Padding="0" Click="ArrowBackButton_Click" Style="{StaticResource BackbuttonStyle}">
 				<Image Source="Assets/images/arrowback.png" Stretch="Fill" Height="93" Width="93"/>
 			</Button>
-			<Button x:Name="ArrowForwardButton" HorizontalAlignment="Left" Margin="1189,631,0,0" VerticalAlignment="Top" Height="95" Width="95" BorderThickness="0" Padding="0">
+			<Button x:Name="ArrowForwardButton" HorizontalAlignment="Left" Margin="1189,631,0,0" VerticalAlignment="Top" Height="95" Width="95" BorderThickness="0" Padding="0" Click="ArrowForwardButton_Click">
 				<Image Source="Assets/images/yes.png" Stretch="Fill" Height="88" Width="88"/>
 			</Button>
 			<TextBox x:Name="OldCustomerLastNameTextBox" HorizontalAlignment="Left" Margin="272,318,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" FontFamily="Merriweather Sans" FontWeight="Bold" FontSize="24" Foreground="#FF1BA0D4" Height="45"/>

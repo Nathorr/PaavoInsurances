@@ -11,9 +11,9 @@ namespace PaavoInsurances
     { 
         [PrimaryKey]
         public string Id { get; set; }
-        [MaxLength(50), Unique]
+        [MaxLength(500), Unique]
         public string securityId { get; set; }
-        [MaxLength(50)]
+        [MaxLength(500)]
         public string bonusCardNumber { get; set; }       
     }
 }

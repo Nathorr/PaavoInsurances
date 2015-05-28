@@ -185,6 +185,7 @@ namespace PaavoInsurances
 
         private void Grid_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
         {
+            Debug.WriteLine("Täs painallus");
             //await _mediaCapture.StopPreviewAsync();
             //this.Frame.Navigate(typeof(CameraPage));
             navigatedFrom = cameraClass.previousPage.ToString();
@@ -196,6 +197,7 @@ namespace PaavoInsurances
             }
             else if(navigatedFrom == "scannedOldCustomerInfoPage")
             {
+                Debug.WriteLine("Täs kans painallus");
                 cameraClass.bonusCard = _result.Text;
                 this.Frame.Navigate(typeof(ScannedOldCustomerInfo), cameraClass);
             }
