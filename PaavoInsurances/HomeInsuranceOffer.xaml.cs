@@ -202,7 +202,7 @@ namespace PaavoInsurances
             price.address = OfferAddressTextBox.Text;
             price.postalCode = OfferAddressTextBox.Text;
             price.insuranceStartDate = OfferStartDatePicker.Date.Day.ToString() + "." + OfferStartDatePicker.Date.Month.ToString() + "." + OfferStartDatePicker.Date.Year.ToString();
-            Debug.WriteLine(price.insuranceStartDate);
+            
             //TÄHÄN LASKEMINEN
             MemoryStream stream1 = new MemoryStream();
             DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(Price));
@@ -210,7 +210,7 @@ namespace PaavoInsurances
             stream1.Position = 0;
             StreamReader sr = new StreamReader(stream1);
             string sr_string = sr.ReadToEnd();
-            Debug.WriteLine(sr_string);
+            
             string RequestUrl = "http://185.20.136.51/sellertool/prices/";
 
             HttpClient clientOb = new HttpClient();
@@ -222,7 +222,7 @@ namespace PaavoInsurances
             using (HttpContent content = response.Content)
             {
                 var result = await content.ReadAsStringAsync();
-                Debug.WriteLine(result);
+                
                 ReturnedData deSer = JsonConvert.DeserializeObject<ReturnedData>(result);
                 OfferPriceResultTextBox.Text = deSer.price.price.ToString();
                 cameraClass.homeInsuranceClass.pricingParameters.price.price = deSer.price.price.ToString();
@@ -242,20 +242,9 @@ namespace PaavoInsurances
                 return;
             
             CalculatePrice();
-            //TÄHÄN SITTEN SE OTSON KANTAAN ÄNKEMINEN JOKA EI EES VITTU TUU TÄLLE SIVULLE LEL
-
-           /* ApartmentToggleButton.IsChecked = false;
-            RowHouseToggleButton.IsChecked = false;
-            PairHouseToggleButton.IsChecked = false;
-            SummerHouseToggleButton.IsChecked = false;
-            SaunaToggleButton.IsChecked = false;
-            price.houseType = "HOUSE";*/
-
         }
         private void ArrowForwardButton_Click(object sender, RoutedEventArgs e)
         {
-            //Price price = new Price();
-            //CameraClass cameraClass = new CameraClass();
             if (!(ApartmentToggleButton.IsChecked == true || RowHouseToggleButton.IsChecked == true || PairHouseToggleButton.IsChecked == true || SummerHouseToggleButton.IsChecked == true ||
                 SaunaToggleButton.IsChecked == true || HouseToggleButton.IsChecked == true) || !(MonthToggleButton.IsChecked == true || QuarterToggleButton.IsChecked == true ||
                 YearToggleButton.IsChecked == true) || !(DollarToggleButton.IsChecked == true || EuroToggleButton.IsChecked == true))
@@ -273,7 +262,6 @@ namespace PaavoInsurances
                 PairHouseToggleButton.IsChecked = false;
                 SummerHouseToggleButton.IsChecked = false;
                 SaunaToggleButton.IsChecked = false;
-                //price.houseType = "HOUSE";
                 cameraClass.homeInsuranceClass.pricingParameters.houseType = "HOUSE";
             }
             if (ApartmentToggleButton.IsChecked == true)

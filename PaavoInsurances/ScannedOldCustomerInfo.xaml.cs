@@ -38,27 +38,21 @@ namespace PaavoInsurances
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            //result = e.Parameter.ToString();
             cameraClass = (CameraClass)e.Parameter;
             if(cameraClass.previousPage == "scannedOldCustomerInfoPage")
             {
                 OldCustomerBonusCard.Text = cameraClass.bonusCard;
             }
-            Debug.WriteLine("TÄSÄ: "+cameraClass.bonusCard);
             GetUserFromSqlite(cameraClass);
-            //FetchData();
 
         }
         async private void GetUserFromSqlite(CameraClass cameraClass)
         {
-            Debug.WriteLine(cameraClass.socialSecurityId);
-            Debug.WriteLine("Tänne tultii.");
             SQLiteAsyncConnection conn = new SQLiteAsyncConnection("ClientTable");
             var query = conn.Table<ClientTable>().Where(x => x.securityId == cameraClass.socialSecurityId);
             var result = await query.ToListAsync();
             foreach (var item in result)
             {
-                Debug.WriteLine("Tänne tultii jee.");
                 if (item.bonusCardNumber != null)
                 {
                     OldCustomerBonusCard.Text = item.bonusCardNumber;
@@ -71,15 +65,11 @@ namespace PaavoInsurances
         async private void insertBonusCard(string bonusCard, string id, string scanId, ScannedOldCustomerInfo.CameraClass cameraClass)
         {
             SQLiteAsyncConnection conn = new SQLiteAsyncConnection("ClientTable");
-            Debug.WriteLine("Debuggia pukkaa..");
             
             var query = conn.Table<ClientTable>().Where(x => x.securityId == cameraClass.socialSecurityId);
             var result = await query.ToListAsync();
             foreach (var item in result)
             {
-                Debug.WriteLine(id);
-                Debug.WriteLine(scanId);
-                Debug.WriteLine("Bonus: "+bonusCard);
                 
                 ClientTable client = new ClientTable
                 {
@@ -100,7 +90,6 @@ namespace PaavoInsurances
             var result = await query.ToListAsync();
             foreach (var item in result)
             {
-                Debug.WriteLine("Tämä tulee kannasta: "+item.bonusCardNumber + " " + item.Id + " " + item.securityId);
             }
         }
         
@@ -160,19 +149,14 @@ namespace PaavoInsurances
             clientOb.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", authString);
             clientOb.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
             HttpResponseMessage response = await clientOb.GetAsync(RequestUrl);
-            //Debug.WriteLine(response);
             using (HttpContent content = response.Content)
             {
                 var result = await content.ReadAsStringAsync();
-                //Debug.WriteLine(result);
                 List<HomeInsuranceClass> deSer = JsonConvert.DeserializeObject<List<HomeInsuranceClass>>(result);
                 for (int i = 0; i < deSer.Count; i++)
                 {
-                    //Debug.WriteLine("Eri id:t : " +deSer[i].id);
-                    //Debug.WriteLine("Täs lorpon hetulla vakuutusID: " + insuranceId);
                     if(deSer[i].id == insuranceId)
                     {
-                        //Debug.WriteLine("Jee päästiin tänne asti!");
                         OldCustomerFirstNameTextBox.Text = deSer[i].name;
                         OldCustomerLastNameTextBox.Text = deSer[i].surName;
                         OldCustomerAddressTextBox.Text = deSer[i].pricingParameters.address;
@@ -184,10 +168,6 @@ namespace PaavoInsurances
                         cameraClass.homeInsuranceClass.id = deSer[i].id;
                         
                     }
-                    else
-                    {
-                        Debug.WriteLine("Nothing found!!!!");
-                    }
                     
                 }
             }
@@ -195,15 +175,6 @@ namespace PaavoInsurances
 
         private void OldCustomerScanMeButton_Click(object sender, RoutedEventArgs e)
         {
-            //CameraClass cameraClass = new CameraClass
-            //{
-                //previousPage = "scannedOldCustomerInfoPage",
-                //homeInsuranceClass = new HomeInsuranceClass
-                //{
-                    //id = result
-                //}
-
-            //};
             cameraClass.previousPage = "scannedOldCustomerInfoPage";
             this.Frame.Navigate(typeof(CameraPage), cameraClass);
 
@@ -221,8 +192,6 @@ namespace PaavoInsurances
 
         private void ArrowForwardButton_Click(object sender, RoutedEventArgs e)
         {
-            Debug.WriteLine("painallus");
-            
             insertBonusCard(cameraClass.bonusCard, cameraClass.homeInsuranceClass.id , cameraClass.socialSecurityId, cameraClass);
             this.Frame.Navigate(typeof(BonusClubThankYouPage));
         }
